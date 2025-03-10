@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Nav from "./nav";
+import MenuBtn from "./menuBtn";
 
 const nav = [
   {
@@ -28,7 +29,6 @@ const nav = [
 ];
 
 export default function MainHeader() {
-  const pathname = usePathname();
   return (
     <header>
       <div>
@@ -36,56 +36,17 @@ export default function MainHeader() {
           <Link href="/">
             <Image
               src="/images/common/logo.png"
-              alt=""
+              alt="ガーナの未来ある子供達に笑顔と教育を！マンフィーと青年基金NGO"
               width={365}
               height={63}
             />
           </Link>
         </h1>
 
-        <nav>
-          <ul>
-            {nav.map((n) => {
-              return (
-                <li>
-                  <Link
-                    href={n.link}
-                    className={
-                      pathname === n.link ? `active ${n.iconCls}` : n.iconCls
-                    }
-                  >
-                    {n.text}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-
-        {/* <div id="menu__btn" className="menu__btn">
-          MENU
-        </div>
-
-        <div className="menu__background"></div> */}
+        <MenuBtn />
       </div>
 
-      {/* <div className="l-navi__wrap">
-        <ul id="ch-Lang" className="l-navi--chengeLang">
-          <li className="l-navi--chengeLang__list">
-            <a className="l-navi--chengeLang__list-header disabled" href="#">
-              Language
-            </a>
-            <ul className="l-navi--chengeLang__list-item__wrap">
-              <li>
-                <a href="./">Japanese</a>
-              </li>
-              <li>
-                <a href="./en/">English</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div> */}
+      <Nav navData={nav} />
     </header>
   );
 }
