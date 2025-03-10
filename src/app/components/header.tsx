@@ -1,64 +1,76 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const nav = [
   {
-    link: "about-us",
+    link: "/about-us",
     iconCls: "icon-about-us",
     text: "チームについて",
   },
   {
-    link: "project",
+    link: "/project",
     iconCls: "icon-project",
     text: "プロジェクト",
   },
   {
-    link: "blog",
+    link: "/blog",
     iconCls: "icon-blog",
     text: "ブログ",
   },
   {
-    link: "donate",
+    link: "/donate",
     iconCls: "icon-donate",
     text: "ご寄付について",
   },
 ];
 
 export default function MainHeader() {
+  const pathname = usePathname();
   return (
-    <div className="l-header">
-      <div className="l-header__wrap">
-        <h1 className="l-header__title">
-          <a href="/site-MYF/" className="l-header__link">
-            <img
-              className="l-header__logo"
-              src="/site-MYF/images/common/logo.png"
+    <header>
+      <div>
+        <h1>
+          <Link href="/">
+            <Image
+              src="/images/common/logo.png"
               alt=""
+              width={365}
+              height={63}
             />
-          </a>
+          </Link>
         </h1>
 
-        <div id="menu" className="menu">
-          <ul className="l-navi">
+        <nav>
+          <ul>
             {nav.map((n) => {
               return (
-                <li className="l-navi__item">
-                  <a href={n.link} className={`l-navi__link ${n.iconCls}`}>
+                <li>
+                  <Link
+                    href={n.link}
+                    className={
+                      pathname === n.link ? `active ${n.iconCls}` : n.iconCls
+                    }
+                  >
                     {n.text}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
           </ul>
-        </div>
+        </nav>
 
-        <div id="menu__btn" className="menu__btn">
+        {/* <div id="menu__btn" className="menu__btn">
           MENU
         </div>
 
-        <div className="menu__background"></div>
+        <div className="menu__background"></div> */}
       </div>
 
-      <div className="l-navi__wrap">
+      {/* <div className="l-navi__wrap">
         <ul id="ch-Lang" className="l-navi--chengeLang">
           <li className="l-navi--chengeLang__list">
             <a className="l-navi--chengeLang__list-header disabled" href="#">
@@ -74,7 +86,7 @@ export default function MainHeader() {
             </ul>
           </li>
         </ul>
-      </div>
-    </div>
+      </div> */}
+    </header>
   );
 }

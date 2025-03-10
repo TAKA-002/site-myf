@@ -1,5 +1,5 @@
 module.exports = {
-  printWidth: 120, // 1行の文字数制限
+  printWidth: 200, // 1行の文字数制限
   tabWidth: 2, // インデントのスペース数
   useTabs: true, // タブの代わりにスペースを使用するか
   semi: true, // ステートメントの最後にセミコロンを付けるか
