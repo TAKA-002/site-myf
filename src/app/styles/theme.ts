@@ -1,12 +1,14 @@
 export interface Theme {
   colors: {
-    menu: string;
+    menuBtn: string;
+    bgHeader: string,
   }
 
 }
 
 export const theme: Theme = {
   colors: {
-    menu: "#000",
+    menuBtn: "#fff",
+    bgHeader: "#288f4d",
   },
 };
