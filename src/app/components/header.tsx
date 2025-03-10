@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Nav from "./nav";
-import MenuBtn from "./menuBtn";
+import Nav from "./Nav";
+import MenuBtn from "./MenuBtn";
 
 const nav = [
   {
