@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/globals.scss";
 import MainHeader from "./components/header";
 import MainFooter from "./components/footer";
 
