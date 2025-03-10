@@ -1,10 +1,10 @@
-import React from "react";
+import { ReactNode } from "react";
 import "./styles/globals.scss";
 import MainHeader from "./components/header";
 import MainFooter from "./components/footer";
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function layout({ children }: LayoutProps) {
