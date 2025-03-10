@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import MainHeader from "./components/header";
+import MainFooter from "./components/footer";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,9 +10,9 @@ export default function layout({ children }: LayoutProps) {
   return (
     <html lang="ja">
       <body>
-        <Header />
+        <MainHeader />
         <main>{children}</main>
-        <Footer />
+        <MainFooter />
       </body>
     </html>
   );

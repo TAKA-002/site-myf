@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // 設定をここに記述
+module.exports = {
+  compiler: {
+    styledComponents: true,
+  },
 };
-
-module.exports = nextConfig;
