@@ -7,19 +7,19 @@ import MainHeader from "./components/Header";
 import MainFooter from "./components/Footer";
 
 interface LayoutProps {
-  children: ReactNode;
+	children: ReactNode;
 }
 
 export default function layout({ children }: LayoutProps) {
-  return (
-    <html lang="ja">
-      <body>
-        <ThemeProvider theme={theme}>
-          <MainHeader />
-          <main>{children}</main>
-          <MainFooter />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="ja">
+			<body>
+				<ThemeProvider theme={theme}>
+					<MainHeader />
+					<main>{children}</main>
+					<MainFooter />
+				</ThemeProvider>
+			</body>
+		</html>
+	);
 }
