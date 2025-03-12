@@ -3,25 +3,24 @@ import Link from "next/link";
 import { Earth } from "lucide-react";
 
 const Wrapper = styled.ul`
+	position: relative;
 	width: 120px;
 	height: 30px;
-	overflow: hidden;
-	border-radius: 9999px;
 
 	& li {
+		position: relative;
 		width: 100%;
 		height: 100%;
-		font-size: 10px;
+		font-size: 12px;
 		color: ${(props) => props.theme.colors.txtLangBtn};
 		background-color: ${(props) => props.theme.colors.bgLangBtn};
 		font-weight: bold;
+		transition: transform 0.3s;
 
-		&:not(:first-child) {
-			opacity: 0;
-			display: none;
-		}
+		&:nth-child(1) {
+			border-radius: 6px;
+			z-index: 2;
 
-		&:first-child {
 			& a {
 				pointer-events: none;
 				display: flex;
@@ -30,11 +29,39 @@ const Wrapper = styled.ul`
 			}
 		}
 
+		&:not(:first-child) {
+			& a {
+				z-index: 1;
+				padding: 0 0 0 20px;
+			}
+		}
+
+		&:nth-child(2) {
+			transform: translateY(-30px);
+		}
+
+		&:nth-child(3) {
+			transform: translateY(-60px);
+			border-radius: 0 0 6px 6px;
+		}
+
 		& a {
 			display: grid;
 			align-items: center;
 			height: 100%;
 			padding: 0 8px;
+		}
+	}
+
+	&.open {
+		& li:nth-child(1) {
+			border-radius: 6px 6px 0 0;
+		}
+		& li:nth-child(2) {
+			transform: none;
+		}
+		& li:nth-child(3) {
+			transform: none;
 		}
 	}
 `;
