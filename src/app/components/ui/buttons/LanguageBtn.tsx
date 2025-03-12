@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { isMobile } from "react-device-detect";
 import styled from "styled-components";
 import Link from "next/link";
 import { Earth } from "lucide-react";
@@ -73,21 +72,23 @@ const Wrapper = styled.ul`
 
 export default function LanguageButton() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false); // menuボタンがopenか状態管理
-	const [isMobileSizeWindow, setIsMobileSizeWindow] = useState(false); // useStateでSPか状態管理
+	const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-	// // useEffectで、コンポーネントマウント時の処理を記載（デバイス判定実施）
 	useEffect(() => {
-		console.log("isMobile: ", isMobile);
+		// タッチデバイスかどうかで処理を分岐するためチェック
+		const checkTouch = () => setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
+		checkTouch();
 	}, []);
 
-	// const handleClick = () => {
-	// 	!isMobileSizeWindow ? setIsMenuOpen(!isMenuOpen)
-	// }
+	const handleClick = (e) => setIsMenuOpen((prev) => !prev);
+	const handleTouch = (e) => setIsMenuOpen((prev) => !prev);
+
+	const touchEvents = isTouchDevice ? { onTouchStart: handleTouch } : { onClick: handleClick };
 
 	return (
 		<LanguageBtnWrapper>
-			<Wrapper>
-				<li>
+			<Wrapper className={isMenuOpen ? "open" : ""}>
+				<li {...touchEvents}>
 					<a href="#">
 						Language
 						<Earth />
