@@ -44,6 +44,14 @@ const Wrapper = styled.div`
 	padding: 4px 8px;
 `;
 
+const LangBtnWrapper = styled.div`
+	display: block;
+
+	@media screen and (max-width: 570px) {
+		display: none;
+	}
+`;
+
 const BtnWrapper = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -72,7 +80,9 @@ export default function MainHeader() {
 				</StyledLink>
 
 				<BtnWrapper>
-					<LangBtn />
+					<LangBtnWrapper>
+						<LangBtn />
+					</LangBtnWrapper>
 					<MenuBtn />
 				</BtnWrapper>
 			</Wrapper>
