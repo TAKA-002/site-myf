@@ -44,15 +44,6 @@ const Wrapper = styled.div`
 	padding: 4px 8px;
 `;
 
-/* 579pxまで非表示。580pxから表示。 */
-const LangBtnWrapper = styled.div`
-	display: none;
-
-	@media screen and (min-width: ${(props) => props.theme.breakpoint.LangBtn}) {
-		display: block;
-	}
-`;
-
 const BtnWrapper = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -81,9 +72,7 @@ export default function MainHeader() {
 				</StyledLink>
 
 				<BtnWrapper>
-					<LangBtnWrapper>
-						<LangBtn />
-					</LangBtnWrapper>
+					<LangBtn />
 					<MenuBtn />
 				</BtnWrapper>
 			</Wrapper>

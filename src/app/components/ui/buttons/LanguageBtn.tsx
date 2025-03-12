@@ -3,6 +3,7 @@ import { isMobile } from "react-device-detect";
 import styled from "styled-components";
 import Link from "next/link";
 import { Earth } from "lucide-react";
+import LanguageBtnWrapper from "./LanguageBtnWrapper";
 
 const Wrapper = styled.ul`
 	position: relative;
@@ -84,19 +85,21 @@ export default function LanguageButton() {
 	// }
 
 	return (
-		<Wrapper>
-			<li>
-				<a href="#">
-					Language
-					<Earth />
-				</a>
-			</li>
-			<li>
-				<Link href="">Japanese</Link>
-			</li>
-			<li>
-				<Link href="./en/">English</Link>
-			</li>
-		</Wrapper>
+		<LanguageBtnWrapper>
+			<Wrapper>
+				<li>
+					<a href="#">
+						Language
+						<Earth />
+					</a>
+				</li>
+				<li>
+					<Link href="">Japanese</Link>
+				</li>
+				<li>
+					<Link href="./en/">English</Link>
+				</li>
+			</Wrapper>
+		</LanguageBtnWrapper>
 	);
 }
