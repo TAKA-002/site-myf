@@ -4,7 +4,11 @@ export interface Theme {
     bgLangBtn: string;
     txtLangBtn: string;
     bgHeader: string,
+  },
+  breakpoint: {
+    LangBtn: string;
   }
+
 
 }
 
@@ -15,4 +19,7 @@ export const theme: Theme = {
     txtLangBtn: "#fff",
     bgHeader: "#288f4d",
   },
+  breakpoint: {
+    LangBtn: "580px",
+  }
 };

@@ -44,11 +44,12 @@ const Wrapper = styled.div`
 	padding: 4px 8px;
 `;
 
+/* 579pxまで非表示。580pxから表示。 */
 const LangBtnWrapper = styled.div`
-	display: block;
+	display: none;
 
-	@media screen and (max-width: 570px) {
-		display: none;
+	@media screen and (min-width: ${(props) => props.theme.breakpoint.LangBtn}) {
+		display: block;
 	}
 `;
 
