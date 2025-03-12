@@ -55,7 +55,7 @@ const LangBtnWrapper = styled.div`
 const BtnWrapper = styled.div`
 	display: flex;
 	flex-direction: row;
-	gap: 8px;
+	gap: 12px;
 `;
 
 const StyledLink = styled(Link)`
