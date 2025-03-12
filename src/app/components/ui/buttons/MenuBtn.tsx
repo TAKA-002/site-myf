@@ -10,6 +10,7 @@ const Button = styled.button`
 		background-color: ${(props) => props.theme.colors.bgMenuBtn};
 		margin-bottom: 9px;
 		cursor: pointer;
+		border-radius: 9999px;
 		transition:
 			transform 0.7s,
 			opacity 0.7s;
@@ -21,7 +22,7 @@ const Button = styled.button`
 
 	&.open {
 		& > span:nth-child(1) {
-			transform: translateY(11px) rotate(135deg);
+			transform: translateY(13px) rotate(135deg);
 		}
 
 		& > span:nth-child(2) {
