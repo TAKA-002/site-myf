@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { Earth } from "lucide-react";
@@ -8,6 +8,10 @@ const Wrapper = styled.ul`
 	position: relative;
 	width: 120px;
 	height: 30px;
+
+	&:hover {
+		cursor: pointer;
+	}
 
 	& li {
 		position: relative;
@@ -71,7 +75,7 @@ const Wrapper = styled.ul`
 `;
 
 export default function LanguageButton() {
-	const [isMenuOpen, setIsMenuOpen] = useState(false); // menuボタンがopenか状態管理
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isTouchDevice, setIsTouchDevice] = useState(false);
 
 	useEffect(() => {
@@ -80,16 +84,24 @@ export default function LanguageButton() {
 		checkTouch();
 	}, []);
 
-	const handleClick = (e) => setIsMenuOpen((prev) => !prev);
-	const handleTouch = (e) => setIsMenuOpen((prev) => !prev);
+	const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+		e.preventDefault();
+		setIsMenuOpen((prev) => !prev);
+	};
 
-	const touchEvents = isTouchDevice ? { onTouchStart: handleTouch } : { onClick: handleClick };
+	const handleTouch = (e: React.TouchEvent<HTMLElement>) => {
+		e.preventDefault();
+		setIsMenuOpen((prev) => !prev);
+	};
+
+	// 適切なイベントを判断
+	const appropriateEvents = isTouchDevice ? { onTouchStart: handleTouch } : { onClick: handleClick };
 
 	return (
 		<LanguageBtnWrapper>
 			<Wrapper className={isMenuOpen ? "open" : ""}>
-				<li {...touchEvents}>
-					<a href="#">
+				<li {...appropriateEvents}>
+					<a>
 						Language
 						<Earth />
 					</a>
