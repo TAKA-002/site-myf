@@ -3,9 +3,8 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import Nav from "./Nav";
-import LanguageBtn from "./LanguageBtn";
-import MenuBtn from "./MenuBtn";
+import Nav from "../navigation/HeaderNav";
+import { MenuBtn, LangBtn } from "../buttons";
 
 const nav = [
 	{
@@ -47,11 +46,15 @@ const Wrapper = styled.div`
 
 const BtnWrapper = styled.div`
 	display: flex;
+	flex-direction: row;
+	gap: 8px;
 `;
 
 const StyledLink = styled(Link)`
 	max-width: 365px;
+	width: 100%;
 	height: auto;
+	aspect-ratio: 365 / 63;
 
 	& img {
 		width: 100%;
@@ -64,14 +67,12 @@ export default function MainHeader() {
 	return (
 		<Header>
 			<Wrapper>
-				<h1>
-					<StyledLink href="/">
-						<Image src="/images/common/logo.png" alt="ガーナの未来ある子供達に笑顔と教育を！マンフィーと青年基金NGO" width={365} height={63} />
-					</StyledLink>
-				</h1>
+				<StyledLink href="/">
+					<Image src="/images/common/logo.png" alt="ガーナの未来ある子供達に笑顔と教育を！マンフィーと青年基金NGO" width={365} height={63} />
+				</StyledLink>
 
 				<BtnWrapper>
-					<LanguageBtn />
+					<LangBtn />
 					<MenuBtn />
 				</BtnWrapper>
 			</Wrapper>

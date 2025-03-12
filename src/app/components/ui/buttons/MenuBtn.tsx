@@ -7,7 +7,7 @@ const Button = styled.button`
 		display: block;
 		width: 100%;
 		height: 3px;
-		background-color: ${(props) => props.theme.colors.menuBtn};
+		background-color: ${(props) => props.theme.colors.bgMenuBtn};
 		margin-bottom: 9px;
 		cursor: pointer;
 		transition:
@@ -35,7 +35,7 @@ const Button = styled.button`
 	}
 `;
 
-export default function MenuBtn() {
+export default function MenuButton() {
 	return (
 		<Button>
 			<span></span>

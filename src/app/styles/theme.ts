@@ -1,6 +1,8 @@
 export interface Theme {
   colors: {
-    menuBtn: string;
+    bgMenuBtn: string;
+    bgLangBtn: string;
+    txtLangBtn: string;
     bgHeader: string,
   }
 
@@ -8,7 +10,9 @@ export interface Theme {
 
 export const theme: Theme = {
   colors: {
-    menuBtn: "#fff",
+    bgMenuBtn: "#fff",
+    bgLangBtn: "#000",
+    txtLangBtn: "#fff",
     bgHeader: "#288f4d",
   },
 };

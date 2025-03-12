@@ -3,8 +3,8 @@ import { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import "./styles/globals.scss";
-import MainHeader from "./components/Header";
-import MainFooter from "./components/Footer";
+import MainHeader from "./components/ui/layout/Header";
+import MainFooter from "./components/ui/layout/Footer";
 
 interface LayoutProps {
 	children: ReactNode;
