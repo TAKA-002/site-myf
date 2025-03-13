@@ -8,7 +8,7 @@ interface LangBtnWrapperProps {
 const LangBtnWrapper = styled.div`
 	/* 579pxまで表示。580pxから非表示。 */
 	body > & {
-		position: absolute;
+		position: fixed;
 		z-index: 20;
 		right: 0;
 		bottom: 120px;
