@@ -8,6 +8,7 @@ import React, { useState, useContext, createContext, ReactNode } from "react";
 type MenuContextType = {
 	isOpen: boolean;
 	toggleMenu: () => void;
+	closeMenu: () => void;
 };
 
 // createContextで状態管理
@@ -24,10 +25,11 @@ export function MenuProvider({ children }: { children: ReactNode }) {
 
 	// toggleMenuは、isOpenのstateの現状を確認して、それをtrue、falseの切り替え実施
 	const toggleMenu = () => setIsOpen((prev) => !prev);
+	const closeMenu = () => setIsOpen(false);
 
 	// <MenuContext.Provider> を使って、これらの値と関数をセットにしたオブジェクトを「容器」に設定します
 	// useStateで、isOpen以外も作れるし、openMenuなどのメソッドも作成できるが、コンテキストを通じてvalueで提供できるのはMenuContextTypeに定義したもののみ
-	return <MenuContext.Provider value={{ isOpen, toggleMenu }}>{children}</MenuContext.Provider>;
+	return <MenuContext.Provider value={{ isOpen, toggleMenu, closeMenu }}>{children}</MenuContext.Provider>;
 }
 
 // 関係性をまとめると

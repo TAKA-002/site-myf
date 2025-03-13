@@ -17,6 +17,6 @@ const Overlay = styled.div`
 `;
 
 export default function MenuOverlay() {
-	const { isOpen } = useMenu();
-	return <Overlay className={isOpen ? "open" : ""}></Overlay>;
+	const { isOpen, closeMenu } = useMenu();
+	return <Overlay className={isOpen ? "open" : ""} onClick={closeMenu}></Overlay>;
 }
