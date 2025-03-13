@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -37,8 +38,11 @@ const Button = styled.button`
 `;
 
 export default function MenuButton() {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const handleClick = () => setIsMenuOpen((prev) => !prev);
+
 	return (
-		<Button>
+		<Button className={isMenuOpen ? "open" : ""} onClick={handleClick}>
 			<span></span>
 			<span></span>
 			<span></span>
