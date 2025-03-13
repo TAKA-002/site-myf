@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useMenu } from "../../../context/MenuContext";
 
 const Overlay = styled.div`
 	position: absolute;
@@ -16,5 +17,6 @@ const Overlay = styled.div`
 `;
 
 export default function MenuOverlay() {
-	return <Overlay></Overlay>;
+	const { isOpen } = useMenu();
+	return <Overlay className={isOpen ? "open" : ""}></Overlay>;
 }

@@ -1,5 +1,5 @@
-import { useState } from "react";
 import styled from "styled-components";
+import { useMenu } from "../../../context/MenuContext";
 
 const Button = styled.button`
 	width: 44px;
@@ -38,11 +38,10 @@ const Button = styled.button`
 `;
 
 export default function MenuButton() {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const handleClick = () => setIsMenuOpen((prev) => !prev);
+	const { isOpen, toggleMenu } = useMenu();
 
 	return (
-		<Button className={isMenuOpen ? "open" : ""} onClick={handleClick}>
+		<Button className={isOpen ? "open" : ""} onClick={toggleMenu}>
 			<span></span>
 			<span></span>
 			<span></span>

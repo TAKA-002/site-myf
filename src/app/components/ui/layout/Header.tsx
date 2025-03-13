@@ -1,5 +1,4 @@
 "use client";
-
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,6 +30,8 @@ const nav = [
 
 const Header = styled.header`
 	background-color: ${(props) => props.theme.colors.bgHeader};
+	position: relative;
+	z-index: 20;
 `;
 
 const Wrapper = styled.div`

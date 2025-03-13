@@ -35,3 +35,13 @@ export function MenuProvider({ children }: { children: ReactNode }) {
 // createContext は「そのデータを入れる容器」を作ります
 // MenuProvider は「実際のデータと操作方法を作って容器に入れる」役割を担います
 // コンテキストを使う側（子コンポーネント）は、この容器から値を取り出して使用することになります。これが useContext(MenuContext) を呼び出したときに行われることです。
+
+// カスタムフック
+// MenuContextTypeの方がreturnされている値の方であることを示している
+export function useMenu(): MenuContextType {
+	const context = useContext(MenuContext);
+	if (context === undefined) {
+		throw new Error("useMenu must be used within a MenuProvider");
+	}
+	return context;
+}
