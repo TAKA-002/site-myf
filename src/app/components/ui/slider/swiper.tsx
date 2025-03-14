@@ -1,32 +1,64 @@
 "use client";
 
+import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { nav } from "../../../constants/navigations";
 
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+
+import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
+
+const StyledSwiper = styled(Swiper)`
+	width: 100%;
+	padding: 24px 0;
+`;
+
+const StyledSwiperSlide = styled(SwiperSlide)`
+	/* background-position: center; */
+	/* background-size: cover; */
+	/* width: 300px; */
+	/* height: 300px; */
+
+	/* & img {
+		display: block;
+		width: 100%;
+	} */
+`;
 
 export default () => {
 	return (
-		<Swiper
-			modules={[Navigation, Pagination]}
-			spaceBetween={30}
-			slidesPerView={1}
-			navigation
+		<StyledSwiper
+			slidesPerView={3}
+			effect={"coverflow"}
+			grabCursor={true}
+			autoplay={{
+				delay: 2500,
+				disableOnInteraction: false,
+			}}
+			loop={true}
+			centeredSlides={true}
+			coverflowEffect={{
+				rotate: 50,
+				stretch: 0,
+				depth: 100,
+				modifier: 1,
+				slideShadows: true,
+			}}
 			pagination={{ clickable: true }}
-			onSwiper={(swiper) => console.log(swiper)}
-			onSlideChange={() => console.log("slide change")}
+			modules={[Autoplay, EffectCoverflow, Pagination]}
+			className="mySwiper"
 		>
-			<SwiperSlide>
-				<div style={{ height: "300px", background: "#f1f1f1", display: "flex", justifyContent: "center", alignItems: "center" }}>スライド 1</div>
-			</SwiperSlide>
-			<SwiperSlide>
-				<div style={{ height: "300px", background: "#e1e1e1", display: "flex", justifyContent: "center", alignItems: "center" }}>スライド 2</div>
-			</SwiperSlide>
-			<SwiperSlide>
-				<div style={{ height: "300px", background: "#d1d1d1", display: "flex", justifyContent: "center", alignItems: "center" }}>スライド 3</div>
-			</SwiperSlide>
-		</Swiper>
+			{nav.map((n, index) => {
+				if (n.img !== "") {
+					return (
+						<StyledSwiperSlide key={index}>
+							<img src={`/images/mv/${n.img}`} alt={n.text} />
+						</StyledSwiperSlide>
+					);
+				}
+			})}
+		</StyledSwiper>
 	);
 };
