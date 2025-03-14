@@ -4,6 +4,11 @@ import Link from "next/link";
 
 const nav = [
 	{
+		link: "/",
+		iconCls: "",
+		text: "ホーム",
+	},
+	{
 		link: "/about-us",
 		iconCls: "icon-about-us",
 		text: "チームについて",
@@ -31,11 +36,38 @@ const NavUl = styled.ul`
 	gap: 24px;
 
 	& li {
+		opacity: 0;
+		transform: translateY(5px);
+		transition:
+			opacity 0.2s ease,
+			transform 0.2s ease;
+
+		&:nth-child(1) {
+			transition-delay: 0.2s;
+		}
+		&:nth-child(2) {
+			transition-delay: 0.3s;
+		}
+		&:nth-child(3) {
+			transition-delay: 0.4s;
+		}
+		&:nth-child(4) {
+			transition-delay: 0.5s;
+		}
+		&:nth-child(5) {
+			transition-delay: 0.6s;
+		}
+
 		& a {
 			font-size: min(3.73vw, 16px);
 			color: ${(props) => props.theme.colors.txtNav};
 			font-weight: bold;
 		}
+	}
+
+	.open & li {
+		transform: translateY(0);
+		opacity: 1;
 	}
 `;
 
