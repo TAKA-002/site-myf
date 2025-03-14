@@ -59,9 +59,43 @@ const NavUl = styled.ul`
 		}
 
 		& a {
+			display: flex;
+			align-items: center;
+			gap: 8px;
 			font-size: min(5.71vw, 16px);
 			color: ${(props) => props.theme.colors.txtNav};
 			font-weight: bold;
+
+			&::before {
+				content: "";
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+			&.icon-about-us {
+				&::before {
+					background-image: url(/images/common/icon_about-us.png);
+				}
+			}
+			&.icon-project {
+				&::before {
+					background-image: url(/images/common/icon_project.png);
+				}
+			}
+			&.icon-blog {
+				&::before {
+					background-image: url(/images/common/icon_blog.png);
+				}
+			}
+			&.icon-donate {
+				&::before {
+					background-image: url(/images/common/icon_donate.png);
+				}
+			}
 		}
 	}
 
