@@ -9,6 +9,7 @@ export interface Theme {
   },
   breakpoint: {
     LangBtn: string;
+    MvSlider: string,
   }
 
 
@@ -25,5 +26,6 @@ export const theme: Theme = {
   },
   breakpoint: {
     LangBtn: "590px",
+    MvSlider: "768px",
   }
 };
