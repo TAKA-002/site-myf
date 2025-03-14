@@ -5,6 +5,7 @@ import { MenuProvider } from "./context/MenuContext";
 import { theme } from "./styles/theme";
 import "./styles/globals.scss";
 import MenuOverlay from "./components/ui/overlay/MenuOverlay";
+import NavList from "./components/ui/navigation/NavList";
 import MainHeader from "./components/ui/layout/Header";
 import MainFooter from "./components/ui/layout/Footer";
 import { LangBtn } from "./components/ui/buttons";
@@ -24,7 +25,9 @@ export default function layout({ children }: LayoutProps) {
 			<body>
 				<MenuProvider>
 					<ThemeProvider theme={theme}>
-						<MenuOverlay />
+						<MenuOverlay>
+							<NavList />
+						</MenuOverlay>
 						<MainHeader />
 						<Main>{children}</Main>
 						<LangBtn />

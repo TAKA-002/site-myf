@@ -5,6 +5,7 @@ export interface Theme {
     txtLangBtn: string;
     bgHeader: string,
     overlay: string,
+    txtNav: string,
   },
   breakpoint: {
     LangBtn: string;
@@ -19,7 +20,8 @@ export const theme: Theme = {
     bgLangBtn: "#000",
     txtLangBtn: "#fff",
     bgHeader: "#288f4d",
-    overlay: "#f5f5f5",
+    overlay: "#000",
+    txtNav: "#fff",
   },
   breakpoint: {
     LangBtn: "590px",

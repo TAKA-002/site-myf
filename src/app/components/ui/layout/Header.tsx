@@ -2,31 +2,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import Nav from "../navigation/HeaderNav";
 import { MenuBtn, LangBtn } from "../buttons";
-
-const nav = [
-	{
-		link: "/about-us",
-		iconCls: "icon-about-us",
-		text: "チームについて",
-	},
-	{
-		link: "/project",
-		iconCls: "icon-project",
-		text: "プロジェクト",
-	},
-	{
-		link: "/blog",
-		iconCls: "icon-blog",
-		text: "ブログ",
-	},
-	{
-		link: "/donate",
-		iconCls: "icon-donate",
-		text: "ご寄付について",
-	},
-];
 
 const Header = styled.header`
 	background-color: ${(props) => props.theme.colors.bgHeader};
@@ -77,8 +53,6 @@ export default function MainHeader() {
 					<MenuBtn />
 				</BtnWrapper>
 			</Wrapper>
-
-			{/* <Nav navData={nav} /> */}
 		</Header>
 	);
 }
