@@ -1,34 +1,7 @@
 import styled from "styled-components";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-
-const nav = [
-	{
-		link: "/",
-		iconCls: "",
-		text: "ホーム",
-	},
-	{
-		link: "/about-us",
-		iconCls: "icon-about-us",
-		text: "チームについて",
-	},
-	{
-		link: "/project",
-		iconCls: "icon-project",
-		text: "プロジェクト",
-	},
-	{
-		link: "/blog",
-		iconCls: "icon-blog",
-		text: "ブログ",
-	},
-	{
-		link: "/donate",
-		iconCls: "icon-donate",
-		text: "ご寄付について",
-	},
-];
+import { nav } from "../../../constants/navigations";
 
 const NavUl = styled.ul`
 	display: flex;
