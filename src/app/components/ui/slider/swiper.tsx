@@ -17,6 +17,7 @@ const SwiperContainer = styled.div`
 	width: 100%;
 	overflow: hidden;
 `;
+
 const StyledSwiper = styled(Swiper)`
 	position: relative;
 	left: 50%;
@@ -83,8 +84,9 @@ export default () => {
 				modules={[Autoplay, EffectCoverflow]}
 				className="mySwiper"
 			>
-				{nav.map((n, index) => {
-					if (n.img !== "") {
+				{nav
+					.filter((n) => n.img !== "")
+					.map((n, index) => {
 						return (
 							<StyledSwiperSlide key={index}>
 								<Link href={n.link}>
@@ -92,9 +94,7 @@ export default () => {
 								</Link>
 							</StyledSwiperSlide>
 						);
-					}
-					return null; // 画像がない場合はnullを返す
-				})}
+					})}
 			</StyledSwiper>
 		</SwiperContainer>
 	);
