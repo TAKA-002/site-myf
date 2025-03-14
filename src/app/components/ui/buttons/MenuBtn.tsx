@@ -3,6 +3,7 @@ import { useMenu } from "../../../context/MenuContext";
 
 const Button = styled.button`
 	width: 44px;
+	overflow: hidden;
 
 	& > span {
 		display: block;

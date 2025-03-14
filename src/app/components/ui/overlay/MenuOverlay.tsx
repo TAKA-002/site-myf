@@ -14,7 +14,7 @@ const OverlayDiv = styled.div`
 	transition: opacity 0.5s;
 
 	&.open {
-		opacity: 0.6;
+		opacity: 0.8;
 		z-index: 10;
 	}
 `;

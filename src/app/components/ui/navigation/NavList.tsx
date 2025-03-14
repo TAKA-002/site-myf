@@ -33,14 +33,14 @@ const nav = [
 const NavUl = styled.ul`
 	display: flex;
 	flex-direction: column;
-	gap: 24px;
+	gap: min(6.4vw, 24px);
 
 	& li {
 		opacity: 0;
-		transform: translateY(5px);
+		transform: translateY(20px);
 		transition:
-			opacity 0.2s ease,
-			transform 0.2s ease;
+			opacity 0.3s ease,
+			transform 0.3s ease;
 
 		&:nth-child(1) {
 			transition-delay: 0.2s;
@@ -59,7 +59,7 @@ const NavUl = styled.ul`
 		}
 
 		& a {
-			font-size: min(3.73vw, 16px);
+			font-size: min(5.71vw, 16px);
 			color: ${(props) => props.theme.colors.txtNav};
 			font-weight: bold;
 		}
