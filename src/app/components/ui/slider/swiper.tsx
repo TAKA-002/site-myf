@@ -53,7 +53,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 `;
 
 export default () => {
-	const { isEngPage } = useLang();
+	const { isEnPage } = useLang();
 	return (
 		<SwiperContainer>
 			<StyledSwiper
@@ -91,8 +91,8 @@ export default () => {
 					.map((n, index) => {
 						return (
 							<StyledSwiperSlide key={index}>
-								<Link href={isEngPage ? n.enLink : n.link}>
-									<Image src={`/images/mv/${isEngPage ? n.enImg : n.img}`} alt={isEngPage ? n.enText : n.text} width={640} height={360} />
+								<Link href={isEnPage ? n.enLink : n.link}>
+									<Image src={`/images/mv/${isEnPage ? n.enImg : n.img}`} alt={isEnPage ? n.enText : n.text} width={640} height={360} />
 								</Link>
 							</StyledSwiperSlide>
 						);

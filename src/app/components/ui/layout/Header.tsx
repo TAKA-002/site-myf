@@ -42,7 +42,7 @@ const StyledLink = styled(Link)`
 `;
 
 export default function MainHeader() {
-	const { isEngPage } = useLang();
+	const { isEnPage } = useLang();
 	const headerLinks = {
 		ja: {
 			href: "/",
@@ -59,8 +59,8 @@ export default function MainHeader() {
 	return (
 		<Header>
 			<Wrapper>
-				<StyledLink href={isEngPage ? headerLinks.en.href : headerLinks.ja.href}>
-					<Image src={isEngPage ? headerLinks.en.img : headerLinks.ja.img} alt={isEngPage ? headerLinks.en.alt : headerLinks.ja.alt} width={365} height={63} />
+				<StyledLink href={isEnPage ? headerLinks.en.href : headerLinks.ja.href}>
+					<Image src={isEnPage ? headerLinks.en.img : headerLinks.ja.img} alt={isEnPage ? headerLinks.en.alt : headerLinks.ja.alt} width={365} height={63} />
 				</StyledLink>
 
 				<BtnWrapper>
