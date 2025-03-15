@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import styled from "styled-components";
 import Link from "next/link";
 import { Earth } from "lucide-react";
+import { useLang } from "../../../context/LanguageContext";
 import LanguageBtnWrapper from "./LanguageBtnWrapper";
 
 const Wrapper = styled.ul`
@@ -76,33 +76,9 @@ const Wrapper = styled.ul`
 `;
 
 export default function LanguageButton() {
-	const pathname = usePathname();
-	const [jpPagePathname, setJpPagePathname] = useState("");
-	const [enPagePathname, setEnPagePathname] = useState("");
+	const { jpPagePathname, enPagePathname } = useLang();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-	useEffect(() => {
-		const isTopJpPage = pathname === "/";
-		const isTopEnPage = pathname === "/en";
-		const isEngPage = pathname.split("/").includes("en");
-		const paths = {
-			jpPagePathname: (function () {
-				if (isTopJpPage || isTopEnPage) return "/";
-				else if (isEngPage) return pathname.replace("/en", "");
-				else return pathname;
-			})(),
-
-			enPagePathname: (function () {
-				if (isTopJpPage || isTopEnPage) return "/en";
-				else if (isEngPage) return pathname;
-				else return `${pathname}/en`;
-			})(),
-		};
-
-		setJpPagePathname(paths.jpPagePathname);
-		setEnPagePathname(paths.enPagePathname);
-	}, [pathname]);
 
 	useEffect(() => {
 		// タッチデバイスかどうかで処理を分岐するためチェック
