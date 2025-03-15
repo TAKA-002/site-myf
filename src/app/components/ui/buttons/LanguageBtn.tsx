@@ -76,7 +76,7 @@ const Wrapper = styled.ul`
 `;
 
 export default function LanguageButton() {
-	const { jpPagePathname, enPagePathname } = useLang();
+	const { jaPagePathname, enPagePathname } = useLang();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isTouchDevice, setIsTouchDevice] = useState(false);
 
@@ -109,7 +109,7 @@ export default function LanguageButton() {
 					</a>
 				</li>
 				<li>
-					<Link href={jpPagePathname}>Japanese</Link>
+					<Link href={jaPagePathname}>Japanese</Link>
 				</li>
 				<li>
 					<Link href={enPagePathname}>English</Link>

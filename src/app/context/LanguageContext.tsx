@@ -5,7 +5,7 @@ import React, { useState, useContext, createContext, ReactNode, useEffect } from
 
 type LanguageContextType = {
 	isEnPage: boolean;
-	jpPagePathname: string;
+	jaPagePathname: string;
 	enPagePathname: string;
 };
 
@@ -14,7 +14,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
 	const pathname = usePathname();
 	const [isEnPage, setIsEngPaeg] = useState(false);
-	const [jpPagePathname, setJpPagePathname] = useState("");
+	const [jaPagePathname, setjaPagePathname] = useState("");
 	const [enPagePathname, setEnPagePathname] = useState("");
 
 	useEffect(() => {
@@ -23,7 +23,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 		const hasEngword = pathname.split("/").includes("en");
 
 		const paths = {
-			jpPagePathname: (function (pathname) {
+			jaPagePathname: (function (pathname) {
 				if (isTopJpPage || isTopEnPage) return "/";
 				else if (isEnPage) return pathname.replace("/en", "");
 				else return pathname;
@@ -37,11 +37,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 		};
 
 		setIsEngPaeg(hasEngword);
-		setJpPagePathname(paths.jpPagePathname);
+		setjaPagePathname(paths.jaPagePathname);
 		setEnPagePathname(paths.enPagePathname);
 	}, [pathname]);
 
-	return <LanguageContext.Provider value={{ isEnPage, jpPagePathname, enPagePathname }}>{children}</LanguageContext.Provider>;
+	return <LanguageContext.Provider value={{ isEnPage, jaPagePathname, enPagePathname }}>{children}</LanguageContext.Provider>;
 }
 
 export function useLang() {
