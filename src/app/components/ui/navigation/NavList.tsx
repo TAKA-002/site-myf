@@ -81,7 +81,7 @@ const NavUl = styled.ul`
 
 export default function NavList() {
 	const pathname = usePathname();
-	const { isEngPage } = useLang();
+	const { isEnPage } = useLang();
 
 	return (
 		<nav>
@@ -89,8 +89,8 @@ export default function NavList() {
 				{nav.map((n, index) => {
 					return (
 						<li key={index}>
-							<Link href={isEngPage ? n.enLink : n.link} className={pathname === n.enLink ? `active ${n.iconCls}` : n.iconCls}>
-								{isEngPage ? n.enText : n.text}
+							<Link href={isEnPage ? n.enLink : n.link} className={pathname === n.enLink ? `active ${n.iconCls}` : n.iconCls}>
+								{isEnPage ? n.enText : n.text}
 							</Link>
 						</li>
 					);
