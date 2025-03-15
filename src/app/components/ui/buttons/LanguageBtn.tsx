@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import styled from "styled-components";
 import Link from "next/link";
 import { Earth } from "lucide-react";
@@ -75,6 +76,29 @@ const Wrapper = styled.ul`
 `;
 
 export default function LanguageButton() {
+	const pathname = usePathname();
+
+	const { jpPagePathname, enPagePathname } = ((pathname) => {
+		const splited = pathname.split("/");
+		const isTopJpPage = pathname === "/";
+		const isTopEnPage = pathname === "/en";
+		const isEngPage = splited.includes("en");
+
+		return {
+			jpPagePathname: ((pathname) => {
+				if (isTopJpPage || isTopEnPage) return "/";
+				else if (isEngPage) return pathname.replace("/en", "");
+				else return pathname;
+			})(pathname),
+
+			enPagePathname: ((pathname) => {
+				if (isTopJpPage || isTopEnPage) return "/en";
+				else if (isEngPage) return pathname;
+				else return `${pathname}/en`;
+			})(pathname),
+		};
+	})(pathname);
+
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isTouchDevice, setIsTouchDevice] = useState(false);
 
@@ -107,10 +131,10 @@ export default function LanguageButton() {
 					</a>
 				</li>
 				<li>
-					<Link href="">Japanese</Link>
+					<Link href={jpPagePathname}>Japanese</Link>
 				</li>
 				<li>
-					<Link href="./en/">English</Link>
+					<Link href={enPagePathname}>English</Link>
 				</li>
 			</Wrapper>
 		</LanguageBtnWrapper>
