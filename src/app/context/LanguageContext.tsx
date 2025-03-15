@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import React, { useState, useContext, createContext, ReactNode, useEffect } from "react";
 
 type LanguageContextType = {
+	pathname: string;
 	isEnPage: boolean;
 	jaPagePathname: string;
 	enPagePathname: string;
@@ -41,7 +42,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 		setEnPagePathname(paths.enPagePathname);
 	}, [pathname]);
 
-	return <LanguageContext.Provider value={{ isEnPage, jaPagePathname, enPagePathname }}>{children}</LanguageContext.Provider>;
+	return <LanguageContext.Provider value={{ pathname, isEnPage, jaPagePathname, enPagePathname }}>{children}</LanguageContext.Provider>;
 }
 
 export function useLang() {

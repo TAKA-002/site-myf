@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { nav } from "../../../constants/navigations";
 import { useLang } from "../../../context/LanguageContext";
@@ -80,8 +79,7 @@ const NavUl = styled.ul`
 `;
 
 export default function NavList() {
-	const pathname = usePathname();
-	const { isEnPage } = useLang();
+	const { pathname, isEnPage } = useLang();
 
 	return (
 		<nav>
