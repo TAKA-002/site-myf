@@ -77,30 +77,32 @@ const Wrapper = styled.ul`
 
 export default function LanguageButton() {
 	const pathname = usePathname();
+	const [jpPagePathname, setJpPagePathname] = useState("");
+	const [enPagePathname, setEnPagePathname] = useState("");
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-	const { jpPagePathname, enPagePathname } = ((pathname) => {
-		const splited = pathname.split("/");
+	useEffect(() => {
 		const isTopJpPage = pathname === "/";
 		const isTopEnPage = pathname === "/en";
-		const isEngPage = splited.includes("en");
-
-		return {
-			jpPagePathname: ((pathname) => {
+		const isEngPage = pathname.split("/").includes("en");
+		const paths = {
+			jpPagePathname: (function () {
 				if (isTopJpPage || isTopEnPage) return "/";
 				else if (isEngPage) return pathname.replace("/en", "");
 				else return pathname;
-			})(pathname),
+			})(),
 
-			enPagePathname: ((pathname) => {
+			enPagePathname: (function () {
 				if (isTopJpPage || isTopEnPage) return "/en";
 				else if (isEngPage) return pathname;
 				else return `${pathname}/en`;
-			})(pathname),
+			})(),
 		};
-	})(pathname);
 
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isTouchDevice, setIsTouchDevice] = useState(false);
+		setJpPagePathname(paths.jpPagePathname);
+		setEnPagePathname(paths.enPagePathname);
+	}, [pathname]);
 
 	useEffect(() => {
 		// タッチデバイスかどうかで処理を分岐するためチェック
