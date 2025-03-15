@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { nav } from "../../../constants/navigations";
+import { useLang } from "../../../context/LanguageContext";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -52,6 +53,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 `;
 
 export default () => {
+	const { isEngPage } = useLang();
 	return (
 		<SwiperContainer>
 			<StyledSwiper
@@ -89,8 +91,8 @@ export default () => {
 					.map((n, index) => {
 						return (
 							<StyledSwiperSlide key={index}>
-								<Link href={n.link}>
-									<Image src={`/images/mv/${n.img}`} alt={n.text} width={640} height={360} />
+								<Link href={isEngPage ? n.enLink : n.link}>
+									<Image src={`/images/mv/${isEngPage ? n.enImg : n.img}`} alt={isEngPage ? n.enText : n.text} width={640} height={360} />
 								</Link>
 							</StyledSwiperSlide>
 						);

@@ -4,7 +4,8 @@ interface NavData {
   iconCls: string,
   text: string,
   enText: string,
-  img: string
+  img: string,
+  enImg: string
 }
 
 export const nav: NavData[] = [
@@ -14,7 +15,8 @@ export const nav: NavData[] = [
     iconCls: "",
     text: "ホーム",
     enText: "Home",
-    img: ""
+    img: "",
+    enImg: ""
   },
   {
     link: "/about-us",
@@ -22,7 +24,8 @@ export const nav: NavData[] = [
     iconCls: "icon-about-us",
     text: "チームについて",
     enText: "About Us",
-    img: "mv_aboutus.jpg"
+    img: "mv_aboutus.jpg",
+    enImg: "mv_aboutus_en.jpg"
   },
   {
     link: "/project",
@@ -30,7 +33,8 @@ export const nav: NavData[] = [
     iconCls: "icon-project",
     text: "プロジェクト",
     enText: "Project",
-    img: "mv_project.jpg"
+    img: "mv_project.jpg",
+    enImg: "mv_project_en.jpg"
   },
   {
     link: "/blog",
@@ -38,7 +42,8 @@ export const nav: NavData[] = [
     iconCls: "icon-blog",
     text: "ブログ",
     enText: "Blog",
-    img: "mv_blog.jpg"
+    img: "mv_blog.jpg",
+    enImg: "mv_blog_en.jpg"
   },
   {
     link: "/donate",
@@ -46,6 +51,7 @@ export const nav: NavData[] = [
     iconCls: "icon-donate",
     text: "ご寄付について",
     enText: "Donate",
-    img: "mv_donate.jpg"
+    img: "mv_donate.jpg",
+    enImg: "mv_donate_en.jpg"
   },
 ];
