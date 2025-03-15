@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { nav } from "../../../constants/navigations";
+import { useLang } from "../../../context/LanguageContext";
 
 const NavUl = styled.ul`
 	display: flex;
@@ -80,6 +81,7 @@ const NavUl = styled.ul`
 
 export default function NavList() {
 	const pathname = usePathname();
+	const { isEngPage } = useLang();
 
 	return (
 		<nav>
@@ -87,8 +89,8 @@ export default function NavList() {
 				{nav.map((n, index) => {
 					return (
 						<li key={index}>
-							<Link href={n.link} className={pathname === n.link ? `active ${n.iconCls}` : n.iconCls}>
-								{n.text}
+							<Link href={isEngPage ? n.enLink : n.link} className={pathname === n.enLink ? `active ${n.iconCls}` : n.iconCls}>
+								{isEngPage ? n.enText : n.text}
 							</Link>
 						</li>
 					);

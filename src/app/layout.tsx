@@ -2,6 +2,7 @@
 import { ReactNode } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { MenuProvider } from "./context/MenuContext";
+import { LanguageProvider } from "./context/LanguageContext";
 import { theme } from "./styles/theme";
 import "./styles/globals.scss";
 import MenuOverlay from "./components/ui/overlay/MenuOverlay";
@@ -22,17 +23,19 @@ export default function layout({ children }: LayoutProps) {
 	return (
 		<html lang="ja">
 			<body>
-				<MenuProvider>
-					<ThemeProvider theme={theme}>
-						<MenuOverlay>
-							<NavList />
-						</MenuOverlay>
-						<MainHeader />
-						<Main>{children}</Main>
-						<LangBtn />
-						<MainFooter />
-					</ThemeProvider>
-				</MenuProvider>
+				<LanguageProvider>
+					<MenuProvider>
+						<ThemeProvider theme={theme}>
+							<MenuOverlay>
+								<NavList />
+							</MenuOverlay>
+							<MainHeader />
+							<Main>{children}</Main>
+							<LangBtn />
+							<MainFooter />
+						</ThemeProvider>
+					</MenuProvider>
+				</LanguageProvider>
 			</body>
 		</html>
 	);
