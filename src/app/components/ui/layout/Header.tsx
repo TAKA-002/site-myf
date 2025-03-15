@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { MenuBtn, LangBtn } from "../buttons";
+import { useLang } from "../../../context/LanguageContext";
 
 const Header = styled.header`
 	background-color: ${(props) => props.theme.colors.bgHeader};
@@ -41,11 +42,25 @@ const StyledLink = styled(Link)`
 `;
 
 export default function MainHeader() {
+	const { isEngPage } = useLang();
+	const headerLinks = {
+		ja: {
+			href: "/",
+			img: "/images/common/logo.png",
+			alt: "ガーナの未来ある子供達に笑顔と教育を！マンフィーと青年基金NGO",
+		},
+		en: {
+			href: "/en",
+			img: "/images/common/logo_en.png",
+			alt: "Monphy and Youth Foundation NGO",
+		},
+	};
+
 	return (
 		<Header>
 			<Wrapper>
-				<StyledLink href="/">
-					<Image src="/images/common/logo.png" alt="ガーナの未来ある子供達に笑顔と教育を！マンフィーと青年基金NGO" width={365} height={63} />
+				<StyledLink href={isEngPage ? headerLinks.en.href : headerLinks.ja.href}>
+					<Image src={isEngPage ? headerLinks.en.img : headerLinks.ja.img} alt={isEngPage ? headerLinks.en.alt : headerLinks.ja.alt} width={365} height={63} />
 				</StyledLink>
 
 				<BtnWrapper>
