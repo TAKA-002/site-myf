@@ -1,10 +1,5 @@
-import styled from "styled-components";
-
-const Footer = styled.footer`
-	background-color: red; // 仮
-	min-height: 300px; // 仮
-`;
+import styles from "./Footer.module.scss";
 
 export default function MainFooter() {
-	return <Footer>Footer</Footer>;
+	return <footer className={styles.footer}>Footer</footer>;
 }

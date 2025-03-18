@@ -1,0 +1,38 @@
+.mySwiperContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mySwiper {
+  position: relative;
+  left: 50%;
+  width: 100%;
+  padding-bottom: 24px;
+  transform: translateX(-50%);
+
+  @media screen and (min-width: 768px) {
+    padding-top: 24px;
+    width: 130%;
+  }
+}
+
+.mySwiperSlide {
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 16 / 9;
+
+  @media screen and (min-width: 768px) {
+    border-radius: 8px;
+  }
+
+  &.swiper-slide-active {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

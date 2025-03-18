@@ -1,0 +1,22 @@
+.div {
+
+  /* 579pxまで非表示。580pxから表示。 */
+  display: none;
+
+  @media screen and (min-width: 590px) {
+    display: block;
+  }
+
+  /* 579pxまで表示。580pxから非表示。 */
+  body>& {
+    position: fixed;
+    z-index: 20;
+    right: 0;
+    bottom: 120px;
+    display: block;
+
+    @media screen and (min-width: 590px) {
+      display: none;
+    }
+  }
+}
