@@ -1,16 +1,13 @@
 "use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { nav } from "../../../constants/navigations";
 import { useLang } from "../../../context/LanguageContext";
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import styles from "./swiper.module.scss";
-
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 
 export default () => {
