@@ -1,5 +1,12 @@
 .div {
 
+  /* 579pxまで非表示。580pxから表示。 */
+  display: none;
+
+  @media screen and (min-width: 590px) {
+    display: block;
+  }
+
   /* 579pxまで表示。580pxから非表示。 */
   body>& {
     position: fixed;
@@ -11,12 +18,5 @@
     @media screen and (min-width: 590px) {
       display: none;
     }
-  }
-
-  /* 579pxまで非表示。580pxから表示。 */
-  display: none;
-
-  @media screen and (min-width: 590px) {
-    display: block;
   }
 }

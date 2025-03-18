@@ -31,7 +31,7 @@ export default function LanguageButton() {
 
 	return (
 		<LanguageBtnWrapper>
-			<ul className={isMenuOpen ? `${styles.ul} open` : styles.ul}>
+			<ul className={isMenuOpen ? `${styles.ul} ${styles.open}` : styles.ul}>
 				<li {...appropriateEvents}>
 					<a>
 						Language

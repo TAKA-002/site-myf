@@ -1,6 +1,5 @@
 "use client";
 
-import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,53 +9,16 @@ import { useLang } from "../../../context/LanguageContext";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import styles from "./swiper.module.scss";
 
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 
-const SwiperContainer = styled.div`
-	position: relative;
-	width: 100%;
-	overflow: hidden;
-`;
-
-const StyledSwiper = styled(Swiper)`
-	position: relative;
-	left: 50%;
-	width: 100%;
-	padding-bottom: 24px;
-	transform: translateX(-50%);
-
-	@media screen and (min-width: ${(props) => props.theme.breakpoint.MvSlider}) {
-		padding-top: 24px;
-		width: 130%;
-	}
-`;
-
-const StyledSwiperSlide = styled(SwiperSlide)`
-	overflow: hidden;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	aspect-ratio: 16 / 9;
-
-	@media screen and (min-width: ${(props) => props.theme.breakpoint.MvSlider}) {
-		border-radius: 8px;
-	}
-
-	&.swiper-slide-active {
-		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-	}
-
-	& img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-`;
-
 export default () => {
 	const { isEnPage } = useLang();
+
 	return (
-		<SwiperContainer>
-			<StyledSwiper
+		<div className={styles.mySwiperContainer}>
+			<Swiper
 				slidesPerView={1}
 				speed={800} // トランジション速度をミリ秒で指定（デフォルトは300）
 				effect={"coverflow"}
@@ -84,20 +46,20 @@ export default () => {
 					},
 				}}
 				modules={[Autoplay, EffectCoverflow]}
-				className="mySwiper"
+				className={styles.mySwiper}
 			>
 				{nav
 					.filter((n) => n.img !== "")
 					.map((n, index) => {
 						return (
-							<StyledSwiperSlide key={index}>
+							<SwiperSlide className={styles.mySwiperSlide} key={index}>
 								<Link href={isEnPage ? n.enLink : n.link}>
 									<Image src={`/images/mv/${isEnPage ? n.enImg : n.img}`} alt={isEnPage ? n.enText : n.text} width={640} height={360} />
 								</Link>
-							</StyledSwiperSlide>
+							</SwiperSlide>
 						);
 					})}
-			</StyledSwiper>
-		</SwiperContainer>
+			</Swiper>
+		</div>
 	);
 };
