@@ -1,0 +1,16 @@
+.heading2 {
+  position: relative;
+  color: #288f4d;
+  text-align: center;
+  font-weight: bold;
+  font-size: min(8vw, 40px);
+  line-height: 1;
+
+  &::first-letter {
+    font-size: min(12vw, 60px);
+  }
+
+  // アニメーション予定
+  // &.inview{
+  // }
+}
