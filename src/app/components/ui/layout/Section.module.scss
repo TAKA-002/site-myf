@@ -1,0 +1,16 @@
+.section {
+  padding: min(6.4vw, 24px) 0;
+
+  &.slider {
+    padding: 0;
+
+    @media screen and (min-width: 768px) {
+      padding: min(6.4vw, 24px) 0;
+      background-color: #e5f1e3;
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: #e5f1e3;
+  }
+}
