@@ -37,13 +37,13 @@ export const nav: NavData[] = [
     enImg: "mv_project_en.jpg"
   },
   {
-    link: "/blog",
-    enLink: "/blog/en",
-    iconCls: "icon-blog",
-    text: "ブログ",
-    enText: "Blog",
-    img: "mv_blog.jpg",
-    enImg: "mv_blog_en.jpg"
+    link: "/archive",
+    enLink: "/archive/en",
+    iconCls: "icon-archive",
+    text: "アーカイブ",
+    enText: "Archive",
+    img: "mv_archive.jpg",
+    enImg: "mv_archive_en.jpg"
   },
   {
     link: "/donate",
