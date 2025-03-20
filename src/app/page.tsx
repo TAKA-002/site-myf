@@ -10,7 +10,7 @@ export default function Home() {
 				<Swiper />
 			</Section>
 			<Section>
-				<SectionHeadingLevel2nd text="News" />
+				<SectionHeadingLevel2nd text="Notice" />
 				<Notice />
 			</Section>
 		</>
