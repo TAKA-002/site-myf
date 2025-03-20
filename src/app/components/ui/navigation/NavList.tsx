@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { nav } from "../../../constants/navigations";
-import { useMenu } from "../../../context/MenuContext";
-import { useLang } from "../../../context/LanguageContext";
-import styles from "./NavList.module.scss";
+import { nav } from "@/constants/navigations";
+import { useMenu } from "@/context/MenuContext";
+import { useLang } from "@/context/LanguageContext";
+import styles from "@/components/ui/navigation/NavList.module.scss";
 
 export default function NavList() {
 	const { isOpen } = useMenu();

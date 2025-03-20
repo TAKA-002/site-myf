@@ -1,13 +1,13 @@
 "use client";
 import { ReactNode } from "react";
-import { MenuProvider } from "./context/MenuContext";
-import { LanguageProvider } from "./context/LanguageContext";
-import "./styles/globals.scss";
-import MenuOverlay from "./components/ui/overlay/MenuOverlay";
-import NavList from "./components/ui/navigation/NavList";
-import MainHeader from "./components/ui/layout/Header";
-import MainFooter from "./components/ui/layout/Footer";
-import { LangBtn } from "./components/ui/buttons";
+import { MenuProvider } from "@/context/MenuContext";
+import { LanguageProvider } from "@/context/LanguageContext";
+import "@/styles/globals.scss";
+import MenuOverlay from "@/components/ui/overlay/MenuOverlay";
+import NavList from "@/components/ui/navigation/NavList";
+import MainHeader from "@/components/ui/layout/Header";
+import MainFooter from "@/components/ui/layout/Footer";
+import { LangBtn } from "@/components/ui/buttons";
 
 interface LayoutProps {
 	children: ReactNode;

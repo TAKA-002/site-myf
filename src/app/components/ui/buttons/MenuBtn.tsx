@@ -1,5 +1,5 @@
 import styles from "./MenuBtn.module.scss";
-import { useMenu } from "../../../context/MenuContext";
+import { useMenu } from "@/context/MenuContext";
 
 export default function MenuButton() {
 	const { isOpen, toggleMenu } = useMenu();

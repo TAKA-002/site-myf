@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from "./LanguageBtnWrapper.module.scss";
+import styles from "@/components/ui/buttons/LanguageBtnWrapper.module.scss";
 
 interface LangBtnWrapperProps {
 	children: ReactNode;

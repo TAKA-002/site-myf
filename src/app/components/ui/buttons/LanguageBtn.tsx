@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Earth } from "lucide-react";
-import { useLang } from "../../../context/LanguageContext";
-import LanguageBtnWrapper from "./LanguageBtnWrapper";
-import styles from "./LanguageBtn.module.scss";
+import { useLang } from "@/context/LanguageContext";
+import LanguageBtnWrapper from "@/components/ui/buttons/LanguageBtnWrapper";
+import styles from "@/components/ui/buttons/LanguageBtn.module.scss";
 
 export default function LanguageButton() {
 	const { jaPagePathname, enPagePathname } = useLang();

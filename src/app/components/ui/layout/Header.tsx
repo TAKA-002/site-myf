@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MenuBtn, LangBtn } from "../buttons";
-import { useLang } from "../../../context/LanguageContext";
-import styles from "./Header.module.scss";
+import { MenuBtn, LangBtn } from "@/components/ui/buttons";
+import { useLang } from "@/context/LanguageContext";
+import styles from "@/components/ui/layout/Header.module.scss";
 
 const headerLinks = {
 	ja: {
