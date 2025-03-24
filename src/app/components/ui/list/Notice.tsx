@@ -12,10 +12,13 @@ export default function Notice() {
 	return (
 		<div className={styles.wrapper}>
 			{noticeList.map((n, index) => {
+				const link = !isEnPage ? n.link : n.enLink;
+				const hasLink = Boolean(link);
+
 				return (
 					<Link
-						href={!isEnPage && n.link ? n.link : isEnPage && n.enLink ? n.enLink : ""}
-						className={styles.anchor}
+						href={link || ""}
+						className={`${styles.anchor} ${!hasLink ? styles.anchorEventNone : ""}`}
 						key={index}
 						aria-label={isEnPage ? n.enText : n.text}
 						{...(n.isBlank ? { target: "_blank", rel: "noopener noreferrer" } : {})}
@@ -29,7 +32,8 @@ export default function Notice() {
 								<span className={styles.text}>{isEnPage ? n.enText : n.text}</span>
 							</div>
 						</div>
-						<ArrowRight />
+
+						{hasLink && <ArrowRight />}
 					</Link>
 				);
 			})}

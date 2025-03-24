@@ -16,6 +16,10 @@
       border-bottom: 1px dashed #666;
     }
 
+    &.anchorEventNone {
+      pointer-events: none;
+      background-color: rgb(0 0 0 / 20%);
+    }
 
     & .anchorText {
       flex: 1;

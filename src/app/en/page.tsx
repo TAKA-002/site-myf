@@ -14,7 +14,7 @@ export default function Home() {
 				<Notice />
 			</Section>
 			<Section>
-				<SectionHeadingLevel2nd text="About Team" />
+				<SectionHeadingLevel2nd text="About Us" />
 			</Section>
 		</>
 	);
