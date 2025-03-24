@@ -1,12 +1,12 @@
 .section {
-  padding: min(6.4vw, 24px) 0;
+  padding: min(12.8vw, 60px) 0;
 
   &.slider {
     padding: 0;
     background-color: #e5f1e3;
 
     @media screen and (min-width: 768px) {
-      padding: min(6.4vw, 24px) 0;
+      padding: min(6.4vw, 24px) 0 0;
     }
   }
 
