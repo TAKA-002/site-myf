@@ -3,11 +3,11 @@
   color: #288f4d;
   text-align: center;
   font-weight: bold;
-  font-size: min(8vw, 40px);
+  font-size: min(8vw, 32px);
   line-height: 1;
 
   &::first-letter {
-    font-size: min(12vw, 60px);
+    font-size: min(12vw, 40px);
   }
 
   &~* {
