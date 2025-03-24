@@ -13,6 +13,9 @@ export default function Home() {
 				<SectionHeadingLevel2nd text="Notice" />
 				<Notice />
 			</Section>
+			<Section>
+				<SectionHeadingLevel2nd text="About Team" />
+			</Section>
 		</>
 	);
 }
