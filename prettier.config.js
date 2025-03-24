@@ -21,6 +21,6 @@ module.exports = {
 	// vueIndentScriptAndStyle: false, // Vueファイル内のscriptとstyleをインデントするか
 	// endOfLine: "lf", // 改行コード ("lf", "crlf", "cr", "auto")
 	// embeddedLanguageFormatting: "auto", // 埋め込み言語のフォーマット ("auto", "off")
-	// singleAttributePerLine: false, // JSX属性を1行に1つずつ配置するか
+	singleAttributePerLine: true, // JSX属性を1行に1つずつ配置するか
 	// plugins: [], // 使用するプラグイン
 };
