@@ -6,7 +6,7 @@
   & .anchor {
     display: flex;
     flex-direction: row;
-    padding: min(2.13vw, 24px) 0;
+    padding: min(2.13vw, 24px) 12px;
     border-top: 1px dashed #666;
 
     &::after {
@@ -24,12 +24,12 @@
       justify-content: center;
       align-items: center;
       gap: 4px;
-      width: clamp(7.5rem, 4.5rem + 12.8vi, 12.5rem);
+      width: clamp(8.75rem, 4.744rem + 17.094vi, 15rem);
 
       @media screen and (min-width: 768px) {
         flex-direction: row;
         justify-content: flex-start;
-        gap: 8px;
+        gap: 16px;
       }
 
       & .date {
@@ -43,7 +43,20 @@
         border-color: #666;
         border-style: solid;
         border-radius: 9999px;
+        color: #fff;
         font-size: min(3.2vw, 12px);
+        font-weight: bold;
+        box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.45);
+        transform: translate(-2px, -2px);
+        transition: box-shadow 0.3s, transform 0.3s;
+
+        &.archive {
+          background-color: red;
+        }
+
+        &.facebook {
+          background-color: rgba(43, 105, 255, 0.7);
+        }
       }
     }
 
@@ -70,16 +83,28 @@
       }
     }
 
-    &:hover {
-      &>div:last-child {
-        & .text {
-          text-decoration: underline;
+    @media screen and (min-width: 376px) {
+      &:hover {
+        background-color: #00000012;
+
+        &>div:first-child {
+          & .tag {
+            box-shadow: none;
+            transform: none;
+          }
         }
 
-        & svg {
-          transform: translateX(0);
+        &>div:last-child {
+          & .text {
+            text-decoration: underline;
+          }
+
+          & svg {
+            transform: translateX(0);
+          }
         }
       }
+
     }
   }
 }

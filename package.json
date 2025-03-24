@@ -13,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dayjs": "^1.11.13",
     "lucide-react": "^0.479.0",
     "next": "^15.2.1",
     "react": "^19.0.0",

@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { noticeList } from "@/constants/notice";
 import { useLang } from "@/context/LanguageContext";
 import styles from "@/components/ui/list/Notice.module.scss";
+import { Date } from "@/components/ui/text/Date";
 
 export default function Notice() {
 	const { pathname, isEnPage } = useLang();
@@ -13,25 +14,17 @@ export default function Notice() {
 			{noticeList.map((n, index) => {
 				return (
 					<Link
-						href={
-							!isEnPage && n.link
-								? n.link
-								: isEnPage && n.enLink
-									? n.enLink
-									: ""
-						}
+						href={!isEnPage && n.link ? n.link : isEnPage && n.enLink ? n.enLink : ""}
 						className={styles.anchor}
 						key={index}
 						aria-label={isEnPage ? n.enText : n.text}
 					>
 						<div>
-							<time className={styles.date}>{n.date}</time>
-							{n.tag && <span className={styles.tag}>{n.tag}</span>}
+							<Date time={n.date} />
+							{n.tag && <span className={`${styles.tag} ${n.tag ? styles[n.tag.toLowerCase()] : ""}`}>{n.tag}</span>}
 						</div>
 						<div>
-							<span className={styles.text}>
-								{isEnPage ? n.enText : n.text}
-							</span>
+							<span className={styles.text}>{isEnPage ? n.enText : n.text}</span>
 							<ArrowRight />
 						</div>
 					</Link>
