@@ -10,6 +10,10 @@
     font-size: min(12vw, 60px);
   }
 
+  &~* {
+    margin-top: min(6.4vw, 36px);
+  }
+
   // アニメーション予定
   // &.inview{
   // }

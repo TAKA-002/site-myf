@@ -18,15 +18,18 @@ export default function Notice() {
 						className={styles.anchor}
 						key={index}
 						aria-label={isEnPage ? n.enText : n.text}
+						{...(n.isBlank ? { target: "_blank", rel: "noopener noreferrer" } : {})}
 					>
-						<div>
-							<Date time={n.date} />
-							{n.tag && <span className={`${styles.tag} ${n.tag ? styles[n.tag.toLowerCase()] : ""}`}>{n.tag}</span>}
+						<div className={styles.anchorText}>
+							<div>
+								<Date time={n.date} />
+								{n.tag && <span className={`${styles.tag} ${n.tag ? styles[n.tag.toLowerCase()] : ""}`}>{n.tag}</span>}
+							</div>
+							<div>
+								<span className={styles.text}>{isEnPage ? n.enText : n.text}</span>
+							</div>
 						</div>
-						<div>
-							<span className={styles.text}>{isEnPage ? n.enText : n.text}</span>
-							<ArrowRight />
-						</div>
+						<ArrowRight />
 					</Link>
 				);
 			})}
