@@ -1,0 +1,51 @@
+interface AboutUsCard {
+  link: string,
+  enLink: string,
+  heading: string,
+  enHeading: string,
+  text: string,
+  enText: string,
+  img: string,
+  alt: string,
+  enAlt: string,
+  iconCls: string,
+}
+
+export const aboutUsCard: AboutUsCard[] = [
+  {
+    link: "/about-us/message",
+    enLink: "/about-us/message/en",
+    heading: "代表者メッセージ",
+    enHeading: "Message",
+    text: "活動の中心であり、代表のマンフィーのご挨拶を記載しております。",
+    enText: "It is the center of the activity, and the greeting of the representative Manfi is drawn.",
+    img: "/images/top/representative.jpg",
+    alt: "",
+    enAlt: "",
+    iconCls: "icon_message.png",
+  },
+  {
+    link: "/about-us/overview",
+    enLink: "/about-us/overview/en",
+    heading: "なぜ活動をするのか。目標。",
+    enHeading: "Why do you work? the goal.",
+    text: "活動のきっかけは？活動目標についてなど、マンフィーの経験などからご紹介します。",
+    enText: "What made you want to do this? Introducing from Monpfy's experience, such as activity goals.",
+    img: "/images/top/group-overview.jpg",
+    alt: "",
+    enAlt: "",
+    iconCls: "icon_staff.png",
+  },
+  {
+    link: "/about-us/report",
+    enLink: "/about-us/report/en",
+    heading: "年次会計報告",
+    enHeading: "Accounting report",
+    text: "2020年以降の会計記録を掲載させていただいてます。",
+    enText: "Accounting records from 2020 to 2022 are posted.",
+    img: "/images/top/relief-supplies.jpg",
+    alt: "",
+    enAlt: "",
+    iconCls: "icon_note.png",
+  }
+]

@@ -1,0 +1,33 @@
+.cardWrapper {
+  max-width: 960px;
+  padding: 0 12px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+
+  &>a {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+
+    & figure {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 6px;
+      overflow: hidden;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    & .cardText {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

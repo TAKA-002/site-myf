@@ -6,7 +6,7 @@ import styles from "@/components/ui/navigation/NavList.module.scss";
 
 export default function NavList() {
 	const { isOpen } = useMenu();
-	const { pathname, isEnPage } = useLang();
+	const { isEnPage } = useLang();
 
 	return (
 		<nav>
@@ -14,7 +14,10 @@ export default function NavList() {
 				{nav.map((n, index) => {
 					return (
 						<li key={index}>
-							<Link href={isEnPage ? n.enLink : n.link} className={styles[n.iconCls]}>
+							<Link
+								href={isEnPage ? n.enLink : n.link}
+								className={styles[n.iconCls]}
+							>
 								{isEnPage ? n.enText : n.text}
 							</Link>
 						</li>
