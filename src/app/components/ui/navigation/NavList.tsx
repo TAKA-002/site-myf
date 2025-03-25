@@ -12,13 +12,16 @@ export default function NavList() {
 		<nav>
 			<ul className={isOpen ? `${styles.ul} ${styles.open}` : styles.ul}>
 				{nav.map((n, index) => {
+					const link = isEnPage ? n.enLink : n.link;
+					const text = isEnPage ? n.enText : n.text;
+
 					return (
 						<li key={index}>
 							<Link
-								href={isEnPage ? n.enLink : n.link}
+								href={link}
 								className={styles[n.iconCls]}
 							>
-								{isEnPage ? n.enText : n.text}
+								{text}
 							</Link>
 						</li>
 					);

@@ -19,12 +19,23 @@ const headerLinks = {
 
 export default function MainHeader() {
 	const { isEnPage } = useLang();
+	const link = isEnPage ? headerLinks.en.href : headerLinks.ja.href;
+	const src = isEnPage ? headerLinks.en.img : headerLinks.ja.img;
+	const alt = isEnPage ? headerLinks.en.alt : headerLinks.ja.alt;
 
 	return (
 		<header className={styles.header}>
 			<div className={styles.wrapper}>
-				<Link className={styles.link} href={isEnPage ? headerLinks.en.href : headerLinks.ja.href}>
-					<Image src={isEnPage ? headerLinks.en.img : headerLinks.ja.img} alt={isEnPage ? headerLinks.en.alt : headerLinks.ja.alt} width={365} height={63} />
+				<Link
+					className={styles.link}
+					href={link}
+				>
+					<Image
+						src={src}
+						alt={alt}
+						width={365}
+						height={63}
+					/>
 				</Link>
 
 				<div className={styles.btnWrapper}>

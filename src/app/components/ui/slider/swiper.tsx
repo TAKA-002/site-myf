@@ -48,10 +48,22 @@ export default () => {
 				{nav
 					.filter((n) => n.img !== "")
 					.map((n, index) => {
+						const link = isEnPage ? n.enLink : n.link;
+						const img = isEnPage ? n.enImg : n.img;
+						const text = isEnPage ? n.enText : n.text;
+
 						return (
-							<SwiperSlide className={styles.mySwiperSlide} key={index}>
-								<Link href={isEnPage ? n.enLink : n.link}>
-									<Image src={`/images/mv/${isEnPage ? n.enImg : n.img}`} alt={isEnPage ? n.enText : n.text} width={640} height={360} />
+							<SwiperSlide
+								className={styles.mySwiperSlide}
+								key={index}
+							>
+								<Link href={link}>
+									<Image
+										src={`/images/mv/${img}`}
+										alt={text}
+										width={640}
+										height={360}
+									/>
 								</Link>
 							</SwiperSlide>
 						);

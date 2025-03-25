@@ -7,12 +7,13 @@ import styles from "@/components/ui/list/Notice.module.scss";
 import { Date } from "@/components/ui/text/Date";
 
 export default function Notice() {
-	const { pathname, isEnPage } = useLang();
+	const { isEnPage } = useLang();
 
 	return (
 		<div className={styles.wrapper}>
 			{noticeList.map((n, index) => {
-				const link = !isEnPage ? n.link : n.enLink;
+				const link = isEnPage ? n.enLink : n.link;
+				const text = isEnPage ? n.enText : n.text;
 				const hasLink = Boolean(link);
 
 				return (
@@ -20,7 +21,7 @@ export default function Notice() {
 						href={link || ""}
 						className={`${styles.anchor} ${!hasLink ? styles.anchorEventNone : ""}`}
 						key={index}
-						aria-label={isEnPage ? n.enText : n.text}
+						aria-label={text}
 						{...(n.isBlank ? { target: "_blank", rel: "noopener noreferrer" } : {})}
 					>
 						<div className={styles.anchorText}>
@@ -29,7 +30,7 @@ export default function Notice() {
 								{n.tag && <span className={`${styles.tag} ${n.tag ? styles[n.tag.toLowerCase()] : ""}`}>{n.tag}</span>}
 							</div>
 							<div>
-								<span className={styles.text}>{isEnPage ? n.enText : n.text}</span>
+								<span className={styles.text}>{text}</span>
 							</div>
 						</div>
 
