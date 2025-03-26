@@ -1,6 +1,7 @@
 import SectionHeadingLevel2nd from "@/components/ui/heading/SectionHeadingLevel2nd";
 import Section from "@/components/ui/layout/Section";
 import Swiper from "@/components/ui/slider/swiper";
+import DonateSlider from "@/components/ui/slider/donate";
 import Notice from "@/components/ui/list/Notice";
 import FirstViewMotif from "@/components/decoration/FirstViewMotif";
 import { Paragraph } from "@/components/ui/text/Paragraph";
@@ -61,6 +62,26 @@ export default function Home() {
 				<Card data={projectCardData} />
 				<Wrapper>
 					<MoreBtn href="/project" />
+				</Wrapper>
+			</Section>
+
+			<Section>
+				<SectionHeadingLevel2nd text="Donate" />
+				<DonateSlider />
+				<Paragraph
+					maxWidth="600px"
+					marginInline="auto"
+					align="center"
+					needMargin
+				>
+					私達の活動は皆様のご支援のもとに成り立っています。
+					<br />
+					これまで多くの方が少しずつご支援くださったおかげで実現できたことが数多くあります。
+					<br />
+					これからも何卒、ご理解いただければ幸いです。
+				</Paragraph>
+				<Wrapper>
+					<MoreBtn href="/donate" />
 				</Wrapper>
 			</Section>
 		</>
