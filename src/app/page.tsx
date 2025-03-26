@@ -23,8 +23,8 @@ export default function Home() {
 				<FirstViewMotif />
 				<Paragraph
 					maxWidth="600px"
-					align="left"
 					marginInline="auto"
+					needMargin
 				>
 					私達は多くのスタッフがいるわけではありません。 ですが、皆さんと一緒に少しでも恵まれない子どもたちに手を差し伸べられるように努めてまいります。
 				</Paragraph>

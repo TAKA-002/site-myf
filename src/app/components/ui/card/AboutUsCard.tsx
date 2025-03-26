@@ -1,9 +1,12 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import styles from "@/components/ui/card/AboutUsCard.module.scss";
 import { aboutUsCard } from "@/constants/aboutUsCard";
 import { useLang } from "@/context/LanguageContext";
+import HeadingLevel4 from "@/components/ui/heading/HeadingLevel4";
+import { Paragraph } from "../text/Paragraph";
 
 export default function Card() {
 	const { isEnPage } = useLang();
@@ -13,8 +16,8 @@ export default function Card() {
 			{aboutUsCard.map((c, index) => {
 				const link = isEnPage ? c.enLink : c.link;
 				const heading = isEnPage ? c.enHeading : c.heading;
-				const text = isEnPage ? c.enText : c.text;
 				const alt = isEnPage ? c.enAlt : c.alt;
+				const text = isEnPage ? c.enText : c.text;
 
 				return (
 					<Link
@@ -30,12 +33,10 @@ export default function Card() {
 							/>
 						</figure>
 						<div className={styles.cardText}>
-							<div>
-								<h4>{heading}</h4>
-								<p>{text}</p>
-							</div>
-							<p>READ MORE</p>
+							<HeadingLevel4>{heading}</HeadingLevel4>
+							<Paragraph>{text}</Paragraph>
 						</div>
+						<ArrowRight />
 					</Link>
 				);
 			})}

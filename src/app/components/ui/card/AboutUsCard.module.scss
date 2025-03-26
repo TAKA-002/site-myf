@@ -7,15 +7,62 @@
   gap: 16px;
 
   &>a {
+    position: relative;
     display: flex;
     flex-direction: column;
     border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 2px 5px 10px 0px rgba(0, 0, 0, 0.35);
+    transition: box-shadow 0.3s, transform 0.3s;
+    transform-origin: left bottom;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+    & svg {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translateX(-8px);
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      box-shadow: none;
+      transform: rotate(-2deg);
+
+      & svg {
+        transform: translateX(-4px);
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(65% 100%, 100% 90%, 100% 100%);
+      background-color: #1c945e;
+      opacity: 0.4;
+    }
+
 
     & figure {
       width: 100%;
       aspect-ratio: 16 / 9;
-      border-radius: 6px;
-      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 8px;
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        background-image: url(/images/top/icon_track.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
 
       & img {
         width: 100%;
@@ -25,9 +72,11 @@
     }
 
     & .cardText {
-      flex: 1;
       display: flex;
       flex-direction: column;
+      gap: 4px;
+      flex: 1;
+      padding: 16px 20px 24px;
     }
   }
 }

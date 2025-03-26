@@ -6,13 +6,14 @@ interface ParagraphProps {
 	align?: "left" | "center" | "right";
 	maxWidth?: string;
 	marginInline?: "auto" | "initial";
+	needMargin?: boolean;
 }
 
-export function Paragraph({ children, align, maxWidth, marginInline }: ParagraphProps) {
+export function Paragraph({ children, align, maxWidth, marginInline, needMargin }: ParagraphProps) {
 	return (
 		<p
 			className={styles.paragraph}
-			style={{ maxWidth: maxWidth, textAlign: align, marginInline: marginInline }}
+			style={{ maxWidth: maxWidth, textAlign: align, marginInline: marginInline, ...(needMargin && { padding: "0 12px" }) }}
 		>
 			{children}
 		</p>
