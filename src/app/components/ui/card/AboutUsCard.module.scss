@@ -58,10 +58,27 @@
         display: inline-block;
         width: 36px;
         height: 36px;
-        background-image: url(/images/top/icon_track.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
+      }
+
+      &.message {
+        &::before {
+          background-image: url(/images/top/icon_message.png);
+        }
+      }
+
+      &.staff {
+        &::before {
+          background-image: url(/images/top/icon_staff.png);
+        }
+      }
+
+      &.note {
+        &::before {
+          background-image: url(/images/top/icon_note.png);
+        }
       }
 
       & img {

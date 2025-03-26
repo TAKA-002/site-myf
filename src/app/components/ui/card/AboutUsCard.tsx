@@ -24,7 +24,7 @@ export default function Card() {
 						href={link}
 						key={index}
 					>
-						<figure>
+						<figure className={styles[c.iconCls]}>
 							<Image
 								src={c.img}
 								alt={alt}

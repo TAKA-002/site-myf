@@ -22,7 +22,7 @@ export const aboutUsCard: AboutUsCard[] = [
     img: "/images/top/representative.jpg",
     alt: "",
     enAlt: "",
-    iconCls: "icon_message.png",
+    iconCls: "message",
   },
   {
     link: "/about-us/overview",
@@ -34,7 +34,7 @@ export const aboutUsCard: AboutUsCard[] = [
     img: "/images/top/group-overview.jpg",
     alt: "",
     enAlt: "",
-    iconCls: "icon_staff.png",
+    iconCls: "staff",
   },
   {
     link: "/about-us/report",
@@ -46,6 +46,6 @@ export const aboutUsCard: AboutUsCard[] = [
     img: "/images/top/relief-supplies.jpg",
     alt: "",
     enAlt: "",
-    iconCls: "icon_note.png",
+    iconCls: "note",
   }
 ]
