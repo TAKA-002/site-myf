@@ -25,10 +25,18 @@ export default function MainFooter() {
 						</address>
 					</div>
 					<div>
-						<Link href="https://www.facebook.com/monphy.gh.ngo/">
+						<Link
+							href="https://www.facebook.com/monphy.gh.ngo/"
+							rel="noopener noreferrer"
+							target="_blank"
+						>
 							<FaFacebookSquare />
 						</Link>
-						<Link href="https://twitter.com/MonphyNGO">
+						<Link
+							href="https://twitter.com/MonphyNGO"
+							rel="noopener noreferrer"
+							target="_blank"
+						>
 							<FaSquareXTwitter />
 						</Link>
 					</div>
