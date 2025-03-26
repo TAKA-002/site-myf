@@ -26,14 +26,35 @@ export default function Home() {
 				<Paragraph
 					maxWidth="600px"
 					marginInline="auto"
+					align="center"
 					needMargin
 				>
-					We don't have a lot of staff. However, we will work with you to reach out to the underprivileged children.
+					We don't have a lot of staff.
+					<br />
+					However, we will work with you to reach out to the underprivileged children.
 				</Paragraph>
 				<Card />
 				<Wrapper>
 					<MoreBtn href="/about-us/en" />
 				</Wrapper>
+			</Section>
+
+			<Section>
+				<SectionHeadingLevel2nd text="Project" />
+				<Paragraph
+					maxWidth="600px"
+					marginInline="auto"
+					align="center"
+					needMargin
+				>
+					Since the start of the NGO, we have been engaged in various activities. However, many of our activities are temporary support, not continuous support.
+					<br />
+					It is not a fundamental solution in the situation of "pass it and it's done".
+					<br />
+					"Education as continuous support"
+					<br />
+					We are looking for a solution to the underlying problem from this activity.
+				</Paragraph>
 			</Section>
 		</>
 	);
