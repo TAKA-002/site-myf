@@ -3,30 +3,42 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import styles from "@/components/ui/card/Cards.module.scss";
-import { aboutUsCard } from "@/constants/aboutUsCard";
 import { useLang } from "@/context/LanguageContext";
 import HeadingLevel4 from "@/components/ui/heading/HeadingLevel4";
 import { Paragraph } from "@/components/ui/text/Paragraph";
 
-export function Card() {
+interface dataProps {
+	link: string;
+	enLink: string;
+	heading: string;
+	enHeading: string;
+	text: string;
+	enText: string;
+	img: string;
+	alt: string;
+	enAlt: string;
+	iconCls: string;
+}
+
+export function Card({ data }: { data: dataProps[] }) {
 	const { isEnPage } = useLang();
 
 	return (
 		<div className={styles.cardWrapper}>
-			{aboutUsCard.map((c, index) => {
-				const link = isEnPage ? c.enLink : c.link;
-				const heading = isEnPage ? c.enHeading : c.heading;
-				const alt = isEnPage ? c.enAlt : c.alt;
-				const text = isEnPage ? c.enText : c.text;
+			{data.map((d, index) => {
+				const link = isEnPage ? d.enLink : d.link;
+				const heading = isEnPage ? d.enHeading : d.heading;
+				const alt = isEnPage ? d.enAlt : d.alt;
+				const text = isEnPage ? d.enText : d.text;
 
 				return (
 					<Link
 						href={link}
 						key={index}
 					>
-						<figure className={styles[c.iconCls]}>
+						<figure className={styles[d.iconCls]}>
 							<Image
-								src={c.img}
+								src={d.img}
 								alt={alt}
 								width={640}
 								height={360}
