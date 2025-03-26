@@ -4,7 +4,9 @@ import Swiper from "@/components/ui/slider/swiper";
 import Notice from "@/components/ui/list/Notice";
 import FirstViewMotif from "@/components/decoration/FirstViewMotif";
 import { Paragraph } from "@/components/ui/text/Paragraph";
-import Card from "@/components/ui/card/AboutUsCard";
+import { Card } from "@/components/ui/card/Cards";
+import { MoreBtn } from "@/components/ui/buttons/Button";
+import { Wrapper } from "@/components/ui/layout/Wrapper";
 
 export default function Home() {
 	return (
@@ -23,12 +25,15 @@ export default function Home() {
 				<FirstViewMotif />
 				<Paragraph
 					maxWidth="600px"
-					align="left"
 					marginInline="auto"
+					needMargin
 				>
 					We don't have a lot of staff. However, we will work with you to reach out to the underprivileged children.
 				</Paragraph>
 				<Card />
+				<Wrapper>
+					<MoreBtn href="/about-us/en" />
+				</Wrapper>
 			</Section>
 		</>
 	);

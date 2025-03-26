@@ -2,13 +2,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import styles from "@/components/ui/card/AboutUsCard.module.scss";
+import styles from "@/components/ui/card/Cards.module.scss";
 import { aboutUsCard } from "@/constants/aboutUsCard";
 import { useLang } from "@/context/LanguageContext";
 import HeadingLevel4 from "@/components/ui/heading/HeadingLevel4";
-import { Paragraph } from "../text/Paragraph";
+import { Paragraph } from "@/components/ui/text/Paragraph";
 
-export default function Card() {
+export function Card() {
 	const { isEnPage } = useLang();
 
 	return (

@@ -4,7 +4,9 @@ import Swiper from "@/components/ui/slider/swiper";
 import Notice from "@/components/ui/list/Notice";
 import FirstViewMotif from "@/components/decoration/FirstViewMotif";
 import { Paragraph } from "@/components/ui/text/Paragraph";
-import Card from "@/components/ui/card/AboutUsCard";
+import { Card } from "@/components/ui/card/Cards";
+import { MoreBtn } from "@/components/ui/buttons/Button";
+import { Wrapper } from "@/components/ui/layout/Wrapper";
 
 export default function Home() {
 	return (
@@ -29,6 +31,9 @@ export default function Home() {
 					私達は多くのスタッフがいるわけではありません。 ですが、皆さんと一緒に少しでも恵まれない子どもたちに手を差し伸べられるように努めてまいります。
 				</Paragraph>
 				<Card />
+				<Wrapper>
+					<MoreBtn href="/about-us" />
+				</Wrapper>
 			</Section>
 		</>
 	);

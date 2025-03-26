@@ -1,0 +1,22 @@
+.moreBtn {
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 9999px;
+  overflow: hidden;
+  box-shadow: 2px 5px 10px 0px rgba(0, 0, 0, 0.35);
+  transform: translate(-2px, -2px);
+  transition: box-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    transform: translate(0);
+    box-shadow: none;
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    vertical-align: baseline;
+  }
+}
