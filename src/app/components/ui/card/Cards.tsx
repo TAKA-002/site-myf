@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { FaAnglesRight } from "react-icons/fa6";
 import styles from "@/components/ui/card/Cards.module.scss";
 import { useLang } from "@/context/LanguageContext";
 import HeadingLevel4 from "@/components/ui/heading/HeadingLevel4";
@@ -48,7 +48,7 @@ export function Card({ data }: { data: dataProps[] }) {
 							<HeadingLevel4>{heading}</HeadingLevel4>
 							<Paragraph>{text}</Paragraph>
 						</div>
-						<ArrowRight />
+						<FaAnglesRight />
 					</Link>
 				);
 			})}

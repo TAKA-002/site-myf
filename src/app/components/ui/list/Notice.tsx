@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { FaArrowRightLong } from "react-icons/fa6";
 import { noticeList } from "@/constants/notice";
 import { useLang } from "@/context/LanguageContext";
 import styles from "@/components/ui/list/Notice.module.scss";
@@ -34,7 +34,7 @@ export default function Notice() {
 							</div>
 						</div>
 
-						{hasLink && <ArrowRight />}
+						{hasLink && <FaArrowRightLong />}
 					</Link>
 				);
 			})}
