@@ -7,6 +7,7 @@ import { Paragraph } from "@/components/ui/text/Paragraph";
 import { Card } from "@/components/ui/card/Cards";
 import { MoreBtn } from "@/components/ui/buttons/Button";
 import { Wrapper } from "@/components/ui/layout/Wrapper";
+import { aboutUsCardData, projectCardData } from "@/constants/Cards";
 
 export default function Home() {
 	return (
@@ -33,7 +34,7 @@ export default function Home() {
 					<br />
 					ですが、皆さんと一緒に少しでも恵まれない子どもたちに手を差し伸べられるように努めてまいります。
 				</Paragraph>
-				<Card />
+				<Card data={aboutUsCardData} />
 				<Wrapper>
 					<MoreBtn href="/about-us" />
 				</Wrapper>
@@ -57,6 +58,10 @@ export default function Home() {
 					<br />
 					根本的な問題の解決をこの活動から模索しています。
 				</Paragraph>
+				<Card data={projectCardData} />
+				<Wrapper>
+					<MoreBtn href="/project" />
+				</Wrapper>
 			</Section>
 		</>
 	);

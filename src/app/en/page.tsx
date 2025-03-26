@@ -7,6 +7,7 @@ import { Paragraph } from "@/components/ui/text/Paragraph";
 import { Card } from "@/components/ui/card/Cards";
 import { MoreBtn } from "@/components/ui/buttons/Button";
 import { Wrapper } from "@/components/ui/layout/Wrapper";
+import { aboutUsCardData, projectCardData } from "@/constants/Cards";
 
 export default function Home() {
 	return (
@@ -33,7 +34,7 @@ export default function Home() {
 					<br />
 					However, we will work with you to reach out to the underprivileged children.
 				</Paragraph>
-				<Card />
+				<Card data={aboutUsCardData} />
 				<Wrapper>
 					<MoreBtn href="/about-us/en" />
 				</Wrapper>
@@ -55,6 +56,10 @@ export default function Home() {
 					<br />
 					We are looking for a solution to the underlying problem from this activity.
 				</Paragraph>
+				<Card data={projectCardData} />
+				<Wrapper>
+					<MoreBtn href="/project/en" />
+				</Wrapper>
 			</Section>
 		</>
 	);
