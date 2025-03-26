@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Earth } from "lucide-react";
+import { FaEarthAfrica } from "react-icons/fa6";
 import { useLang } from "@/context/LanguageContext";
 import LanguageBtnWrapper from "@/components/ui/buttons/LanguageBtnWrapper";
 import styles from "@/components/ui/buttons/LanguageBtn.module.scss";
@@ -35,7 +35,7 @@ export default function LanguageButton() {
 				<li {...appropriateEvents}>
 					<a>
 						Language
-						<Earth />
+						<FaEarthAfrica />
 					</a>
 				</li>
 				<li>

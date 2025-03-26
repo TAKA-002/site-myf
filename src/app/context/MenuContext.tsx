@@ -1,7 +1,7 @@
 "use client";
 // クライアントサイドで実施するもの
 
-import React, { useState, useContext, createContext, ReactNode } from "react";
+import React, { useState, useContext, createContext, ReactNode, useEffect } from "react";
 
 // 型定義はinterfaceでもOK
 // MenuContextTypeという型定義のオブジェクトにisOpenとtoggleMenuを定義
@@ -22,6 +22,21 @@ const MenuContext = createContext<MenuContextType | undefined>(undefined);
 export function MenuProvider({ children }: { children: ReactNode }) {
 	// isOpenはboolean型。初期値はfalse
 	const [isOpen, setIsOpen] = useState<boolean>(false);
+
+	// menuオープン時にスクロール不可
+	useEffect(() => {
+		if (isOpen) {
+			// スクロールバーの幅を計算（スクロールバーの非表示によるカクつき対策）
+			const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+			// スクロールを無効にしてパディングを追加
+			document.documentElement.style.overflow = "hidden";
+			document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
+		} else {
+			// スタイルを元に戻す
+			document.documentElement.style.overflow = "";
+			document.documentElement.style.paddingRight = "";
+		}
+	}, [isOpen]);
 
 	// toggleMenuは、isOpenのstateの現状を確認して、それをtrue、falseの切り替え実施
 	const toggleMenu = () => setIsOpen((prev) => !prev);
