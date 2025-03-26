@@ -1,4 +1,92 @@
 .footer {
-  background-color: red; // 仮
-  min-height: 300px; // 仮
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #c1e7ed3d;
+
+  &__upper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+
+    .footer__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300%;
+      height: 100%;
+      background-image: url(/images/common/footer_img.png);
+      background-repeat: repeat-x;
+      background-size: contain;
+      background-position: bottom;
+      opacity: 0.8;
+      z-index: 1;
+      animation: scrollBackground 80s linear infinite;
+    }
+
+    .footer__info {
+      max-width: 960px;
+      margin-inline: auto;
+      padding: 12px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+
+      & div:first-child {
+        display: inline-block;
+        padding: 12px;
+        opacity: 0.8;
+        background-color: #fff;
+
+        & h3 {
+          font-size: min(4.26vw, 16px);
+          font-weight: bold;
+        }
+
+        & address {
+          & p {
+            font-size: min(3.73vw, 14px);
+            font-style: initial;
+          }
+        }
+      }
+
+      & div:last-child {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+
+        &>a {
+          width: 48px;
+          height: 48px;
+
+          & svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__under {
+    padding: 12px;
+    width: 100%;
+    background-color: #422f0f;
+    text-align: center;
+  }
+
+}
+
+@keyframes scrollBackground {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+    /* 背景画像の半分の幅分だけスクロール */
+  }
 }
