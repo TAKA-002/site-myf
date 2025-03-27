@@ -40,7 +40,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 		setIsEngPaeg(hasEngword);
 		setjaPagePathname(paths.jaPagePathname);
 		setEnPagePathname(paths.enPagePathname);
-	}, [pathname]);
+	}, [pathname, isEnPage]);
 
 	return <LanguageContext.Provider value={{ pathname, isEnPage, jaPagePathname, enPagePathname }}>{children}</LanguageContext.Provider>;
 }

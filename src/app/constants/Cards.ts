@@ -1,14 +1,14 @@
 interface CardsData {
-  link: string,
-  enLink: string,
-  heading: string,
-  enHeading: string,
-  text: string,
-  enText: string,
-  img: string,
-  alt: string,
-  enAlt: string,
-  iconCls: string,
+  link: string;
+  enLink: string;
+  heading: string;
+  enHeading: string;
+  text: string;
+  enText: string;
+  img: string;
+  alt: string;
+  enAlt: string;
+  iconCls: string;
 }
 
 export const aboutUsCardData: CardsData[] = [

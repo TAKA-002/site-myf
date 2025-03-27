@@ -1,11 +1,11 @@
 interface NoticeListData {
-  date: number,
-  text: string,
-  enText: string,
-  tag?: string,
-  link?: string,
-  enLink?: string,
-  isBlank: boolean
+  date: number;
+  text: string;
+  enText: string;
+  tag?: string;
+  link?: string;
+  enLink?: string;
+  isBlank: boolean;
 }
 
 export const noticeList: NoticeListData[] = [

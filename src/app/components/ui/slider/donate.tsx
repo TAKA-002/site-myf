@@ -8,7 +8,7 @@ import { Autoplay, EffectFade } from "swiper/modules";
 
 const images = ["3yearsold-dora.jpg", "after-donate-dora.jpg", "borad.jpg", "boy-with-note.jpg", "donate.jpg"];
 
-export default () => {
+export default function DonateSlider() {
 	return (
 		<div className={styles.mySwiperContainer}>
 			<Swiper
@@ -45,4 +45,4 @@ export default () => {
 			</Swiper>
 		</div>
 	);
-};
+}

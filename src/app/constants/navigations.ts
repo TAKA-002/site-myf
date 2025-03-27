@@ -1,11 +1,11 @@
 interface NavData {
-  link: string,
-  enLink: string,
-  iconCls: string,
-  text: string,
-  enText: string,
-  img: string,
-  enImg: string
+  link: string;
+  enLink: string;
+  iconCls: string;
+  text: string;
+  enText: string;
+  img: string;
+  enImg: string;
 }
 
 export const nav: NavData[] = [

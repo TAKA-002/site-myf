@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import styles from "@/components/ui/slider/swiper.module.scss";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 
-export default () => {
+export default function MainSlider() {
 	const { isEnPage } = useLang();
 
 	return (
@@ -71,4 +71,4 @@ export default () => {
 			</Swiper>
 		</div>
 	);
-};
+}
