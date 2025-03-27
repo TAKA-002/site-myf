@@ -4,9 +4,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prettier --write \"src/**/*.{ts,tsx}\" && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fmt": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "keywords": [],
   "author": "",

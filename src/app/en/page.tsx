@@ -31,7 +31,7 @@ export default function Home() {
 					align="center"
 					needMargin
 				>
-					We don't have a lot of staff.
+					We don&apos;t have a lot of staff.
 					<br />
 					However, we will work with you to reach out to the underprivileged children.
 				</Paragraph>
@@ -51,9 +51,9 @@ export default function Home() {
 				>
 					Since the start of the NGO, we have been engaged in various activities. However, many of our activities are temporary support, not continuous support.
 					<br />
-					It is not a fundamental solution in the situation of "pass it and it's done".
+					It is not a fundamental solution in the situation of &quot;pass it and it&apos;s done&quot;.
 					<br />
-					"Education as continuous support"
+					&quot;Education as continuous support&quot;
 					<br />
 					We are looking for a solution to the underlying problem from this activity.
 				</Paragraph>
