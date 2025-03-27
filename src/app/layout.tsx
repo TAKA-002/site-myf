@@ -7,7 +7,7 @@ import MenuOverlay from "@/components/ui/overlay/MenuOverlay";
 import NavList from "@/components/ui/navigation/NavList";
 import MainHeader from "@/components/ui/layout/Header";
 import MainFooter from "@/components/ui/layout/Footer";
-import { LangBtn } from "@/components/ui/buttons";
+import { LangBtn, MenuBtn } from "@/components/ui/buttons";
 
 interface LayoutProps {
 	children: ReactNode;
@@ -25,6 +25,7 @@ export default function layout({ children }: LayoutProps) {
 						<MainHeader />
 						<main style={{ minHeight: "100vh" }}>{children}</main>
 						<LangBtn />
+						<MenuBtn noHeader />
 						<MainFooter />
 					</MenuProvider>
 				</LanguageProvider>

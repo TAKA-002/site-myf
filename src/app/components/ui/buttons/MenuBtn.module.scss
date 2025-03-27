@@ -34,4 +34,18 @@
       transform: translateY(-11px) rotate(405deg);
     }
   }
+
+  &.noheader {
+    background-color: #000;
+    height: 44px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 160px;
+    right: 0;
+    z-index: 50;
+
+    &>span {
+      transform: scale(0.7);
+    }
+  }
 }
