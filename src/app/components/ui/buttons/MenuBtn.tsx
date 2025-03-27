@@ -1,11 +1,21 @@
 import styles from "./MenuBtn.module.scss";
 import { useMenu } from "@/context/MenuContext";
 
-export default function MenuButton() {
+export default function MenuButton({ noHeader }: { noHeader?: boolean }) {
 	const { isOpen, toggleMenu } = useMenu();
 
+	const cls = () => {
+		let clsName = styles.button;
+		if (noHeader) clsName += ` ${styles.noheader}`;
+		if (isOpen) clsName += ` ${styles.open}`;
+		return clsName;
+	};
+
 	return (
-		<button className={isOpen ? `${styles.button} ${styles.open}` : styles.button} onClick={toggleMenu}>
+		<button
+			className={cls()}
+			onClick={toggleMenu}
+		>
 			<span></span>
 			<span></span>
 			<span></span>
