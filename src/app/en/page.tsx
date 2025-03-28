@@ -13,7 +13,7 @@ import { aboutUsCardData, projectCardData } from "@/constants/Cards";
 export default function Home() {
 	return (
 		<>
-			<Section name="slider">
+			<Section cusCls="slider">
 				<MainSlider />
 			</Section>
 

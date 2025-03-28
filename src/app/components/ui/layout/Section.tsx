@@ -3,9 +3,9 @@ import styles from "@/components/ui/layout/Section.module.scss";
 
 interface SectionPropsType {
 	children: ReactNode;
-	name?: string;
+	cusCls?: string;
 }
 
-export default function Section({ children, name }: SectionPropsType) {
-	return <section className={name ? `${styles.section} ${styles[name]}` : styles.section}>{children}</section>;
+export default function Section({ children, cusCls }: SectionPropsType) {
+	return <section className={cusCls ? `${styles.section} ${styles[cusCls]}` : styles.section}>{children}</section>;
 }
