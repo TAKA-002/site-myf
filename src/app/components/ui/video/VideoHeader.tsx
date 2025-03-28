@@ -1,6 +1,6 @@
-import styles from "@/components/ui/video/VideoMainVisual.module.scss";
+import styles from "@/components/ui/video/VideoHeader.module.scss";
 
-export default function VideoMainVisual({ category }: { category: string }) {
+export default function VideoHeader({ category }: { category: string }) {
 	const srcFile = () => {
 		const categoryStrings = category.split(" ");
 		if (categoryStrings.length !== 1) {

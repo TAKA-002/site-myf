@@ -1,11 +1,11 @@
 import Section from "@/components/ui/layout/Section";
-import VideoMainVisual from "@/components/ui/video/VideoMainVisual";
+import VideoHeader from "@/components/ui/video/VideoHeader";
 
 export default function AboutUs() {
 	return (
 		<>
 			<Section cusCls="video">
-				<VideoMainVisual category="Project" />
+				<VideoHeader category="Project" />
 			</Section>
 		</>
 	);
