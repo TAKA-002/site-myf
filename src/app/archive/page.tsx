@@ -7,6 +7,10 @@ export default function AboutUs() {
 			<Section cusCls="video">
 				<VideoHeader category="Archive" />
 			</Section>
+
+			<Section>
+				
+			</Section>
 		</>
 	);
 }

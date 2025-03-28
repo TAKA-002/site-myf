@@ -32,14 +32,13 @@
       align-items: center;
 
       & span {
-        color: #fff;
+        display: inline-block;
+        -webkit-text-fill-color: transparent;
         font-weight: bold;
+        background: linear-gradient(90deg, #8B3A3A, #B2AD60, #2E5C3E);
+        background-clip: text;
         font-size: min(10.2vw, 48px);
-        font-style: italic;
       }
-
-
     }
   }
-
 }
