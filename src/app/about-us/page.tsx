@@ -1,17 +1,5 @@
-import Section from "@/components/ui/layout/Section";
-import VideoHeader from "@/components/ui/video/VideoHeader";
-import TimelineList from "@/components/ui/list/TimelineList";
+import AboutUsContent from "@/about-us/components/AboutUsContent";
 
 export default function AboutUs() {
-	return (
-		<>
-			<Section cusCls="video">
-				<VideoHeader category="About Us" />
-			</Section>
-
-			<Section>
-				<TimelineList />
-			</Section>
-		</>
-	);
+	return <AboutUsContent lang="ja" />;
 }
