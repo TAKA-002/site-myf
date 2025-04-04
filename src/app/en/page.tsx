@@ -10,7 +10,7 @@ import { MoreBtn } from "@/components/ui/buttons/Button";
 import { Wrapper } from "@/components/ui/layout/Wrapper";
 import { aboutUsCardData, projectCardData } from "@/constants/Cards";
 
-export default function Home() {
+export default function HomeEn() {
 	return (
 		<>
 			<Section cusCls="slider">
