@@ -12,12 +12,12 @@
       align-items: flex-start;
       gap: 16px;
 
-      & div {
-        flex-basis: 60%;
+      &>div {
+        flex: 1;
       }
 
-      & figure {
-        flex: 1;
+      &>figure {
+        flex-basis: 25%;
         width: 100%;
         aspect-ratio: 16 / 9;
 

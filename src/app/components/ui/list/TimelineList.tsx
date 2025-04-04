@@ -19,7 +19,7 @@ export default function TimelineList() {
 					</div>
 					<figure>
 						<Image
-							src="/images/about-us/thumb.jpg"
+							src="/images/about-us/tmb-message.jpg"
 							alt=""
 							width={640}
 							height={360}
