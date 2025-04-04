@@ -1,12 +1,5 @@
-import Section from "@/components/ui/layout/Section";
-import VideoHeader from "@/components/ui/video/VideoHeader";
+import ProjectContent from "@/project/components/ProjectContent";
 
-export default function AboutUs() {
-	return (
-		<>
-			<Section cusCls="video">
-				<VideoHeader category="Project" />
-			</Section>
-		</>
-	);
+export default function Project() {
+	return <ProjectContent lang="ja" />;
 }
