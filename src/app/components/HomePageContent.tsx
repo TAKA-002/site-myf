@@ -10,7 +10,7 @@ import { Card } from "@/components/ui/card/Cards";
 import { MoreBtn } from "@/components/ui/buttons/Button";
 import { Wrapper } from "@/components/ui/layout/Wrapper";
 import { aboutUsCardData, projectCardData } from "@/constants/Cards";
-import { HomePageTexts } from "@/constants/HomePageTexts";
+import { HomePageTexts } from "@/components/HomePageTexts";
 
 export default function HomePageContent({ lang }: { lang: string }) {
 	return (
