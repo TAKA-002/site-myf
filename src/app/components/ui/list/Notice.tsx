@@ -4,7 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { noticeList } from "@/constants/notice";
 import { useLang } from "@/context/LanguageContext";
 import styles from "@/components/ui/list/Notice.module.scss";
-import { Date } from "@/components/ui/text/Date";
+import { Time } from "@/components/ui/text/Date";
 
 export default function Notice() {
 	const { isEnPage } = useLang();
@@ -26,7 +26,7 @@ export default function Notice() {
 					>
 						<div className={styles.anchorText}>
 							<div>
-								<Date time={n.date} />
+								<Time time={n.date} />
 								{n.tag && <span className={`${styles.tag} ${n.tag ? styles[n.tag.toLowerCase()] : ""}`}>{n.tag}</span>}
 							</div>
 							<div>
