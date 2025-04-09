@@ -21,6 +21,7 @@ const data = [
 		img: "/images/about-us/tmb-message.jpg",
 	},
 ];
+
 export default function TimelineList() {
 	return (
 		<ul className={styles.timeline}>
@@ -35,7 +36,9 @@ export default function TimelineList() {
 							href=""
 						>
 							<div>
-								<h2>{d.h2}</h2>
+								<h2>
+									<span>{d.h2}</span>
+								</h2>
 								<p>{d.paragraph}</p>
 								{d.date && <Time time={d.date} />}
 							</div>
