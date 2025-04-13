@@ -53,10 +53,11 @@
             position: relative;
             display: inline-block;
             letter-spacing: 1.6px;
+            font-weight: 400;
 
             &::first-letter {
               font-size: min(8.4vw, 32px);
-              font-weight: bold;
+              font-weight: 600;
             }
 
             &::after {
